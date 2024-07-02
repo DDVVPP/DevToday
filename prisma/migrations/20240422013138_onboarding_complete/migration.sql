@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "User" ADD COLUMN     "onboardingComplete" BOOLEAN NOT NULL DEFAULT false,
+ALTER COLUMN "level" DROP NOT NULL,
+ALTER COLUMN "goal" DROP NOT NULL;
