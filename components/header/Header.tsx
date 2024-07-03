@@ -1,10 +1,7 @@
 import { currentUser } from "@clerk/nextjs";
 
 import Link from "next/link";
-import Image from "next/image";
 
-import logoLight from "@/public/logoLight.svg";
-import logoDark from "@/public/logoDark.svg";
 import ClerkMenuController from "./ClerkMenuController";
 import HeaderNav from "./HeaderNav";
 import UserButtonNav from "./UserButtonNav";
