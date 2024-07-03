@@ -1,15 +1,13 @@
 import { currentUser } from "@clerk/nextjs";
 
 import Link from "next/link";
-import Image from "next/image";
 
-import logoLight from "@/public/logoLight.svg";
-import logoDark from "@/public/logoDark.svg";
 import ClerkMenuController from "./ClerkMenuController";
 import HeaderNav from "./HeaderNav";
 import UserButtonNav from "./UserButtonNav";
 import NotificationsMenu from "./NotificationsMenu";
 import Search from "./Search";
+import HeaderLogos from "./HeaderLogos";
 
 const Header = async () => {
   // Clerk User
@@ -18,19 +16,7 @@ const Header = async () => {
   return (
     <>
       <header className="sticky flex h-20 items-center justify-between bg-white-100 px-8 dark:bg-dark-800">
-        <Image
-          priority
-          src={logoLight}
-          alt="LogoLight"
-          className="-mt-1.5 block dark:hidden"
-        />
-
-        <Image
-          priority
-          src={logoDark}
-          alt="LogoDark"
-          className="-mt-1.5 hidden dark:block"
-        />
+        <HeaderLogos />
 
         <section className="flex gap-x-7 px-3 max-md:hidden">
           <HeaderNav />
