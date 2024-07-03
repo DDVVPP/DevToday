@@ -24,24 +24,24 @@ const MenuItems = () => {
   };
 
   return (
-    <section className="w-full  space-y-3" id="menu-items">
+    <section className="flex w-full flex-col gap-y-3 pt-2" id="menu-items">
       {clerkMenuItems.map((menuItem) => {
         const { icon: Icon, label } = menuItem;
         return (
           <button
             key={label}
             onClick={() => handleMenuClick(label)}
-            className="group flex items-center gap-x-4 pl-6"
+            className="group flex items-center gap-x-4 pl-6 pt-2"
           >
-            <Icon className="fill-dark-800 group-hover:fill-primary-500 dark:fill-white-200" />
-            <p className="paragraph-3-medium text-dark-800 group-hover:text-primary-500 dark:text-white-200">
+            <Icon className="fill-dark-800  transition duration-200 group-hover:fill-primary-500 dark:fill-white-200" />
+            <p className="paragraph-3-medium text-dark-800 transition duration-200 group-hover:text-primary-500 dark:text-white-200">
               {label}
             </p>
           </button>
         );
       })}
 
-      <div className="flex justify-center">
+      <div className="flex justify-center pt-3">
         <hr className="border-1 h-px  w-3/4 dark:border-dark-700" />
       </div>
 
@@ -57,10 +57,6 @@ const MenuItems = () => {
             <Moon isSelected={theme === Theme.DARK} />
           </button>
         </div>
-      </div>
-
-      <div className="flex justify-center">
-        <hr className="border-1 h-px  w-3/4 dark:border-dark-700" />
       </div>
     </section>
   );
