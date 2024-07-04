@@ -46,7 +46,7 @@ const config = {
         },
         white: {
           100: "#FFFFFF",
-          200: "#F8FAFC",
+          200: "#F0EFEF",
           300: "#C5D0E6",
           400: "#808191",
           border: "#C5D0E666",
