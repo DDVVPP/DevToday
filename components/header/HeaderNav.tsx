@@ -21,7 +21,7 @@ const HeaderNav = () => {
             className={
               isSelected
                 ? "rounded-md bg-primary-500 p-3"
-                : "rounded-md p-3 hover:bg-white-200 dark:hover:bg-dark-700"
+                : "rounded-md p-3 transition duration-300 hover:bg-white-200 dark:hover:bg-dark-700"
             }
           >
             <Icon key={key} fill={isSelected ? "fill-white-100" : ""} />
