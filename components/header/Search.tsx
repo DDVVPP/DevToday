@@ -61,7 +61,7 @@ const Search = () => {
         className="bg-white-200 transition duration-300 group-hover:bg-primary-500 dark:bg-dark-700"
         onClick={() => setOpen((open) => !open)}
       >
-        <SearchIcon className="transition duration-300 group-hover:fill-white-100" />
+        <SearchIcon className="fill-white-400 transition duration-300 group-hover:fill-white-100 dark:fill-white-300" />
       </div>
 
       <SearchCommandDialog open={open} onOpenChange={setOpen}>
@@ -76,7 +76,10 @@ const Search = () => {
           <SearchCommandGroup>
             <Link href="/posts" onClick={() => setOpen((open) => !open)}>
               <SearchCommandItem>
-                <Layers size={18} fill="dark:fill-white-300 fill-white-400" />
+                <Layers
+                  size={18}
+                  className="fill-white-400 dark:fill-white-300"
+                />
                 <p>Explore all posts</p>
               </SearchCommandItem>
             </Link>

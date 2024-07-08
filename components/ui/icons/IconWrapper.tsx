@@ -4,13 +4,11 @@ const IconWrapper = (OriginalComponent: React.ComponentType<any>) => {
   const newComponent = ({
     size = 20,
     className,
-    fill,
     status = "none",
     ...rest
   }: {
     size?: number;
     className?: string;
-    fill?: string;
     status?:
       | "newWithBorder"
       | "newWithoutBorder"
@@ -31,7 +29,7 @@ const IconWrapper = (OriginalComponent: React.ComponentType<any>) => {
 
     return (
       <div
-        className={`flex ${className} ${fill || "fill-white-400 dark:fill-white-300"} ${status !== "none" && "relative"}`}
+        className={`flex ${className} ${status !== "none" && "relative"}`}
         style={{
           width: `${size}px`,
           height: `${size}px`,

@@ -98,7 +98,7 @@ const CommentMenu = ({
         />
         <DropdownMenu>
           <DropdownMenuTrigger className="rounded transition duration-300 hover:bg-white-200 dark:hover:bg-dark-700">
-            <TripleDot size={16} fill="fill-white-300" />
+            <TripleDot size={16} className="fill-white-300" />
           </DropdownMenuTrigger>
 
           <DropdownMenuContent
@@ -109,7 +109,7 @@ const CommentMenu = ({
               className="relative flex cursor-pointer items-center gap-x-3 p-3 hover:rounded hover:bg-white-200 hover:p-3 dark:hover:bg-dark-700"
               onClick={handleCommentEdit}
             >
-              <Edit size={18} fill="fill-dark-700 dark:fill-white-200" />
+              <Edit size={18} className="fill-dark-700 dark:fill-white-200" />
               <p className="paragraph-3-medium text-dark-700 dark:text-white-200">
                 Edit Comment
               </p>
@@ -120,11 +120,7 @@ const CommentMenu = ({
                 className="flex cursor-pointer items-center gap-x-3 p-3 hover:rounded hover:bg-white-200 hover:p-3 dark:hover:bg-dark-700"
                 onClick={() => setOpen((open) => !open)}
               >
-                <Trash
-                  size={18}
-                  className="stroke-[#FF584D]"
-                  fill="fill-none"
-                />
+                <Trash size={18} className="fill-none stroke-[#FF584D]" />
                 <p className="paragraph-3-medium text-[#FF584D]">
                   Delete Comment
                 </p>

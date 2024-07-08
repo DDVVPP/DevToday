@@ -91,14 +91,13 @@ const LikeButton = ({
       >
         <Heart
           size={size}
-          fill={
+          className={`${isPending ? "animate-pulse" : ""} ${
             isLiked
               ? "fill-primary-500"
               : heartBgType === "none"
                 ? "fill-white-300"
                 : "fill-white-400"
-          }
-          className={`${isPending ? "animate-pulse" : ""}`}
+          }`}
         />
       </button>
     </div>

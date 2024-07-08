@@ -77,7 +77,10 @@ const ContentMenu = ({
           }}
         >
           <DropdownMenuTrigger>
-            <TripleDot size={20} fill="fill-white-300 dark:fill-white-100" />
+            <TripleDot
+              size={20}
+              className="fill-white-300 dark:fill-white-100"
+            />
           </DropdownMenuTrigger>
         </MotionDiv>
         <DropdownMenuContent
@@ -92,7 +95,7 @@ const ContentMenu = ({
               )
             }
           >
-            <Edit size={18} fill="fill-dark-700 dark:fill-white-200" />
+            <Edit size={18} className="fill-dark-700 dark:fill-white-200" />
             <p className="paragraph-3-medium text-dark-700 dark:text-white-200">
               Edit {contentCategory}
             </p>
@@ -103,7 +106,7 @@ const ContentMenu = ({
               className="flex cursor-pointer items-center gap-x-3 p-3 transition duration-300 hover:rounded hover:bg-white-200 hover:p-3 dark:hover:bg-dark-700"
               onClick={() => setOpen((open) => !open)}
             >
-              <Trash size={18} className="stroke-[#FF584D]" fill="fill-none" />
+              <Trash size={18} className="fill-none stroke-[#FF584D]" />
               <p className="paragraph-3-medium text-[#FF584D]">
                 Delete {contentCategory}
               </p>
