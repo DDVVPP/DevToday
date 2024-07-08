@@ -15,7 +15,7 @@ const GroupMembersTab = ({
   isMemberAdmin?: boolean;
 }) => {
   return (
-    <div className="rounded-lg p-4 dark:bg-dark-800">
+    <div className="rounded-lg bg-white-100 p-4 dark:bg-dark-800">
       <GroupMembersCard
         member={member}
         loggedInUser={loggedInUser}
