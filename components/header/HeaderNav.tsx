@@ -35,7 +35,7 @@ const HeaderNav = () => {
                     <Icon
                       key={key}
                       fill={isSelected ? "fill-white-100" : ""}
-                      className="group-hover:fill-white-100"
+                      className="transition duration-300 group-hover:fill-white-100"
                     />
                   </Link>
                 </div>

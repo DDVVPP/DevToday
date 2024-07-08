@@ -58,10 +58,10 @@ const Search = () => {
     <>
       {/* SearchIcon in the Header */}
       <div
-        className=" cursor-pointer bg-white-200 dark:bg-dark-700"
+        className="bg-white-200 transition duration-300 group-hover:bg-primary-500 dark:bg-dark-700"
         onClick={() => setOpen((open) => !open)}
       >
-        <SearchIcon />
+        <SearchIcon className="transition duration-300 group-hover:fill-white-100" />
       </div>
 
       <SearchCommandDialog open={open} onOpenChange={setOpen}>
