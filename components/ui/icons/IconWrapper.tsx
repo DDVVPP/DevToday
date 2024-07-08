@@ -29,7 +29,7 @@ const IconWrapper = (OriginalComponent: React.ComponentType<any>) => {
 
     return (
       <div
-        className={`flex ${className} ${status !== "none" && "relative"} fill-white-400 dark:fill-white-300`}
+        className={`flex ${className} ${status !== "none" && "relative"}`}
         style={{
           width: `${size}px`,
           height: `${size}px`,
