@@ -29,7 +29,7 @@ const ContentImageUpload = ({
                   <Loader2 size={20} className="animate-spin" />
                 ) : (
                   <>
-                    <Upload fill="fill-white-400 dark:fill-white-300" />
+                    <Upload className="fill-white-400 dark:fill-white-300" />
                     <p className="paragraph-3-regular text-white-400 dark:text-white-300">
                       {image.length > 0 || value.length > 0
                         ? "Upload a new image"

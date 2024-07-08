@@ -31,7 +31,7 @@ const GroupMembersMenu = ({ memberId }: { memberId: number }) => {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <TripleDot size={16} fill="fill-white-300 dark:fill-white-100" />
+          <TripleDot size={16} className="fill-white-300 dark:fill-white-100" />
         </DropdownMenuTrigger>
 
         <DropdownMenuContent

@@ -87,13 +87,13 @@ const MeetupDetails = ({
 
         <section className="flex flex-col gap-y-4">
           <div className="flex items-center gap-x-2">
-            <Calendar size={18} fill="fill-primary-500" />
+            <Calendar size={18} className="fill-primary-500" />
             <p className="paragraph-2-medium text-dark-700 dark:text-white-200">
               {meetupDateAndTime}
             </p>
           </div>
           <div className="flex items-center gap-x-2">
-            <Location size={18} fill="fill-primary-500" />
+            <Location size={18} className="fill-primary-500" />
             <p className="paragraph-2-medium text-dark-700 dark:text-white-200">
               {address}
             </p>

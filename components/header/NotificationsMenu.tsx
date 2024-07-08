@@ -145,7 +145,7 @@ const NotificationsMenu = ({ userId }: { userId: string }) => {
     <DropdownMenu>
       <DropdownMenuTrigger className="group flex items-center rounded-md bg-white-200 p-3 transition duration-300 hover:bg-primary-500 dark:bg-dark-700">
         <Bell
-          className="transition duration-300 group-hover:fill-white-100"
+          className="fill-white-400 transition duration-300 group-hover:fill-white-100 dark:fill-white-300"
           status={
             (notifications?.unreadNotifications ?? []).length > 0
               ? "newWithBorder"

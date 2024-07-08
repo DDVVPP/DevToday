@@ -177,7 +177,7 @@ const GoogleMapAutocomplete = ({
         title={title ?? ""}
       >
         <Pin background={"#825EF6"} borderColor={"#825EF6"} scale={1.2}>
-          <Calendar size={16} fill="fill-white-200" />
+          <Calendar size={16} className="fill-white-200" />
         </Pin>
         {infoWindowOpen && (
           <InfoWindow

@@ -17,17 +17,23 @@ const SearchItem = ({
   const renderIcon = () => {
     switch (type) {
       case "post":
-        return <Layers size={18} fill="dark:fill-white-300 fill-white-400" />;
+        return (
+          <Layers size={18} className="fill-white-400 dark:fill-white-300" />
+        );
       case "meetup":
-        return <Calendar size={18} fill="dark:fill-white-300 fill-white-400" />;
+        return (
+          <Calendar size={18} className="fill-white-400 dark:fill-white-300" />
+        );
       case "podcast":
-        return <Podcasts size={18} fill="dark:fill-white-300 fill-white-400" />;
+        return (
+          <Podcasts size={18} className="fill-white-400 dark:fill-white-300" />
+        );
       case "group":
         return (
-          <Followers size={18} fill="dark:fill-white-300 fill-white-400" />
+          <Followers size={18} className="fill-white-400 dark:fill-white-300" />
         );
       default:
-        <Layers size={18} fill="dark:fill-white-300 fill-white-400" />;
+        <Layers size={18} className="fill-white-400 dark:fill-white-300" />;
         break;
     }
   };
