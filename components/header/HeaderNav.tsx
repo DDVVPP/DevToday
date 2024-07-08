@@ -5,6 +5,12 @@ import Link from "next/link";
 
 import { middleHeaderIconList } from "@/lib/constants";
 import CreateButton from "./CreateButton";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const HeaderNav = () => {
   const pathname = usePathname();
@@ -15,17 +21,33 @@ const HeaderNav = () => {
         const { icon: Icon, key } = icon;
         const isSelected = pathname.includes(key);
         return (
-          <Link
-            key={key}
-            href={`/${key}`}
-            className={
-              isSelected
-                ? "rounded-md bg-primary-500 p-3"
-                : "rounded-md p-3 transition duration-300 hover:bg-white-200 dark:hover:bg-dark-700"
-            }
-          >
-            <Icon key={key} fill={isSelected ? "fill-white-100" : ""} />
-          </Link>
+          <TooltipProvider key={key}>
+            <Tooltip>
+              <TooltipTrigger>
+                <div
+                  className={
+                    isSelected
+                      ? "rounded-md bg-primary-500 p-3"
+                      : "group rounded-md p-3 transition duration-300  hover:bg-primary-500"
+                  }
+                >
+                  <Link href={`/${key}`}>
+                    <Icon
+                      key={key}
+                      fill={isSelected ? "fill-white-100" : ""}
+                      className="group-hover:fill-white-100"
+                    />
+                  </Link>
+                </div>
+              </TooltipTrigger>
+              <TooltipContent
+                className="caption-10 border border-white-border text-dark-700 dark:border-dark-800 dark:bg-dark-700 dark:text-white-100"
+                align="center"
+              >
+                {`${icon.key[0].toUpperCase()}${icon.key.slice(1)}`}
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         );
       })}
       <CreateButton />
