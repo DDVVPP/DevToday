@@ -1,6 +1,7 @@
 import { getTimeDifference } from "@/lib/utils";
 import React from "react";
 import ContainedImage from "@/components/shared/ContainedImage";
+import { ProfilePlaceholder } from "@/components/ui";
 import MotionDiv from "@/components/shared/MotionDiv";
 const UserSection = ({
   username,
@@ -16,13 +17,17 @@ const UserSection = ({
       whileHover={{ scale: 1.1, originX: 0.0 }}
       className="flex items-center align-middle"
     >
-      <ContainedImage
-        src={image!}
-        alt="avatar"
-        width={40}
-        height={40}
-        className="rounded-full"
-      />
+      {image ? (
+        <ContainedImage
+          src={image!}
+          alt="avatar"
+          width={40}
+          height={40}
+          className="rounded-full"
+        />
+      ) : (
+        <ProfilePlaceholder size={40} className="shrink-0" />
+      )}
       <div className="ml-2 flex flex-col justify-start">
         <p className="paragraph-3-medium text-dark-800 dark:text-white-300">
           {username}
