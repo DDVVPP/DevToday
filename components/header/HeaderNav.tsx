@@ -21,7 +21,7 @@ const HeaderNav = () => {
         const { icon: Icon, key } = icon;
         const isSelected = pathname.includes(key);
         return (
-          <TooltipProvider key={key}>
+          <TooltipProvider key={key} delayDuration={0}>
             <Tooltip>
               <TooltipTrigger>
                 <div

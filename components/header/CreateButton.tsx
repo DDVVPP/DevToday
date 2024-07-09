@@ -22,7 +22,7 @@ const CreateButton = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const router = useRouter();
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={0}>
       <Tooltip>
         <Popover key={"menuPopover" + isMobile}>
           <TooltipTrigger>
