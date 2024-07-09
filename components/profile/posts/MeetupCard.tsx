@@ -29,15 +29,13 @@ const MeetupCard = ({ meetup, index = 1 }: MeetupCardProps) => {
           >
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-x-5">
-                <MotionDiv whileHover={{ scale: 1.1 }}>
-                  <Image
-                    src={meetup?.image!}
-                    width={72}
-                    height={72}
-                    alt="meetup-image"
-                    className="size-[72px] shrink-0 self-start rounded-[6px] max-lg:hidden"
-                  />
-                </MotionDiv>
+                <Image
+                  src={meetup?.image!}
+                  width={72}
+                  height={72}
+                  alt="meetup-image"
+                  className="size-[72px] shrink-0 self-start rounded-[6px] max-lg:hidden"
+                />
                 <div className="flex flex-col gap-y-2">
                   <h3 className="paragraph-1-bold max-lg:paragraph-3-bold text-dark-800 max-lg:line-clamp-1 dark:text-white-200">
                     {meetup?.title}
