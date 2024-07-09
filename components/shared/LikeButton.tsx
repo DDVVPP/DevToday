@@ -26,7 +26,7 @@ const LikeButton = ({
 
   const heartBackground = {
     circle:
-      "rounded-full bg-white-300 p-2.5 dark:bg-dark-700 dark:group-hover:bg-dark-800 transition duration-500",
+      "rounded-full bg-white-300 p-2.5 dark:bg-dark-700 dark:group-hover:bg-dark-800 group-hover:bg-white-100 transition duration-500",
     square: `rounded transition duration-300 dark:bg-dark-700 hover:bg-white-200 dark:hover:bg-dark-700 w-6 h-6 ${isLiked && "dark:bg-primary-100 bg-primary-100"}`,
     none: "rounded transition duration-300 hover:bg-white-200 dark:hover:bg-dark-700",
   };
