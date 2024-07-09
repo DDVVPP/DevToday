@@ -70,41 +70,38 @@ const GroupRightSidebar = async ({
         <div className="mt-5 flex flex-wrap justify-start gap-6">
           {group.members.map((member) => {
             return member.image ? (
-              <TooltipProvider>
-                <Tooltip>
-                  <MotionDiv
-                    key={member.id}
-                    whileHover={{
-                      scale: 1.2,
-                    }}
-                    transition={{
-                      duration: 0.2,
-                      ease: "linear",
-                    }}
-                    className="flex"
-                  >
-                    <Link
-                      href={`/profile/${member.id}`}
-                      className="relative size-10"
-                    >
-                      <TooltipTrigger>
+              <MotionDiv
+                key={member.id}
+                whileHover={{
+                  scale: 1.2,
+                }}
+                transition={{
+                  duration: 0.2,
+                  ease: "linear",
+                }}
+                className="flex"
+              >
+                <TooltipProvider delayDuration={0}>
+                  <Tooltip>
+                    <TooltipTrigger className="relative size-10">
+                      <Link href={`/profile/${member.id}`}>
                         <Image
                           src={member.image}
                           alt="members-profile-image"
                           fill
                           className="rounded-full"
                         />
-                      </TooltipTrigger>
-                    </Link>
-                  </MotionDiv>
-                  <TooltipContent
-                    className="caption-8 border border-white-border bg-white-100 text-dark-700 dark:border-dark-border dark:bg-dark-800 dark:text-white-300"
-                    align="center"
-                  >
-                    {member.firstName} {member.lastName}
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent
+                      className="caption-8 border border-white-border bg-white-100 text-dark-700 dark:border-dark-border dark:bg-dark-800 dark:text-white-300"
+                      align="center"
+                    >
+                      {member.firstName} {member.lastName}
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </MotionDiv>
             ) : (
               <MotionDiv
                 key={member.id}

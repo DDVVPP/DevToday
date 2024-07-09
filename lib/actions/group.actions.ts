@@ -161,6 +161,12 @@ export async function _getGroupById(id: string) {
           },
           take: 5,
         },
+        podcasts: {
+          orderBy: {
+            createdAt: "desc",
+          },
+          take: 5,
+        },
         _count: {
           select: {
             posts: true,

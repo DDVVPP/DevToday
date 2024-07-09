@@ -32,6 +32,14 @@ const GroupTabs = ({
   groupAdmins.forEach((admin: MemberIsAdmin) => (admin.isAdmin = true));
   const allMembers = [...group.members, ...groupAdmins];
 
+  const renderNoContentDiv = (contentType: string) => {
+    return (
+      <div className="flex h-24 items-center justify-center rounded-lg bg-white-100 dark:bg-dark-800">
+        <p className="paragraph-3-medium text-white-400">No {contentType}</p>
+      </div>
+    );
+  };
+
   return (
     <Tabs defaultValue={tabValue} onValueChange={(value) => setTabValue(value)}>
       <div className="flex h-[76px] w-full items-center justify-between gap-y-2.5 rounded-lg bg-white-100 px-7 text-white-400 max-md-b:h-[64px] dark:bg-dark-800 dark:text-white-100">
@@ -48,53 +56,71 @@ const GroupTabs = ({
         </TabsList>
       </div>
 
-      <TabsContent value="Posts" className="mt-5 flex w-full flex-col gap-y-5 ">
-        {group.posts?.map((post: any, index: number) => (
-          <PostCard
-            key={index}
-            userData={group}
-            post={{
-              ...post,
-              commentCount: post.commentCount,
-              tags: post.tags,
-            }}
-          />
-        ))}
+      <TabsContent value="Posts" className="mt-5 flex w-full flex-col gap-y-5">
+        {group.posts?.length > 0
+          ? group.posts?.map((post: any, index: number) => (
+              <PostCard
+                key={index}
+                userData={group}
+                post={{
+                  ...post,
+                  commentCount: post.commentCount,
+                  tags: post.tags,
+                }}
+              />
+            ))
+          : renderNoContentDiv("Posts")}
       </TabsContent>
-      <TabsContent value="Meetups" className="mt-5 w-full space-y-2.5 ">
-        {group.meetups?.map((meetup: any, index: number) => (
-          <MeetupCard key={index} meetup={meetup} />
-        ))}
+      <TabsContent
+        value="Meetups"
+        className="flex w-full flex-col gap-y-[21px]"
+      >
+        {group.meetups?.length > 0
+          ? group.meetups?.map((meetup: any, index: number) => (
+              <MeetupCard key={index} meetup={meetup} />
+            ))
+          : renderNoContentDiv("Meetups")}
       </TabsContent>
-      <TabsContent value="Podcasts" className="mt-5 w-full space-y-2.5 ">
-        <div className=" grid grid-flow-row grid-cols-2 grid-rows-2 gap-5 max-lg:flex max-lg:flex-col ">
-          {group.podcasts?.map((podcast: any, index: number) => (
-            <div
-              key={index}
-              className="rounded-[16px] bg-white-200 dark:bg-dark-800"
-            >
-              <PodcastCard key={index} user={group} podcast={podcast} />
-            </div>
-          ))}
-        </div>
+      <TabsContent
+        value="Podcasts"
+        className="flex w-full flex-col gap-y-[21px]"
+      >
+        {group.podcasts?.length ? (
+          <div className="grid grid-flow-row grid-cols-2 grid-rows-2 gap-5 max-lg:flex max-lg:flex-col ">
+            {group.podcasts?.map((podcast: any, index: number) => (
+              <div
+                key={index}
+                className="rounded-[16px] bg-white-200 dark:bg-dark-800"
+              >
+                <PodcastCard key={index} user={group} podcast={podcast} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          renderNoContentDiv("Podcasts")
+        )}
       </TabsContent>
 
       <TabsContent
         value="Members"
-        className="mt-5 w-full space-y-2.5 bg-white-200 dark:bg-dark-900"
+        className="w-full bg-white-200 dark:bg-dark-900"
       >
-        <div className=" grid grid-flow-row grid-rows-2 gap-5 max-lg:flex max-lg:flex-col xl:grid-cols-2 ">
-          {allMembers?.map((member: MemberIsAdmin, index: any) => (
-            <div key={index} className="rounded-[16px]">
-              <GroupMembersTab
-                member={member}
-                loggedInUser={user as GroupLoggedInUser}
-                isLoggedInUserAdmin={isAdmin}
-                isMemberAdmin={member.isAdmin}
-              />
-            </div>
-          ))}
-        </div>
+        {allMembers?.length > 0 ? (
+          <div className=" grid grid-flow-row grid-rows-2 gap-5 max-lg:flex max-lg:flex-col xl:grid-cols-2 ">
+            {allMembers?.map((member: MemberIsAdmin, index: any) => (
+              <div key={index} className="rounded-[16px]">
+                <GroupMembersTab
+                  member={member}
+                  loggedInUser={user as GroupLoggedInUser}
+                  isLoggedInUserAdmin={isAdmin}
+                  isMemberAdmin={member.isAdmin}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          renderNoContentDiv("Members")
+        )}
       </TabsContent>
     </Tabs>
   );
