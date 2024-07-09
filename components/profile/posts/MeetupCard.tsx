@@ -25,7 +25,7 @@ const MeetupCard = ({ meetup, index = 1 }: MeetupCardProps) => {
         <div className="group flex cursor-pointer flex-col rounded-[16px] bg-white-100 p-5 transition duration-300 hover:bg-[#e1e2e6] dark:bg-dark-800 dark:hover:bg-dark-700">
           <Link
             href={`/meetups/${meetup.id}`}
-            className=" flex flex-col gap-y-4"
+            className="flex flex-col gap-y-4"
           >
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-x-5">
