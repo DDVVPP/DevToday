@@ -25,7 +25,7 @@ const PodcastCard = ({ podcast, user, index = 1 }: PodcastCardProps) => {
     >
       <Link
         href={`/podcasts/${podcast?.id!}`}
-        className="group relative flex h-[260px] break-inside-avoid-column flex-col justify-between rounded-[16px] bg-white-100 p-5 transition duration-300 hover:bg-[#e1e2e6] dark:bg-dark-800 dark:hover:bg-dark-700"
+        className="group/contentcard relative flex h-[260px] break-inside-avoid-column flex-col justify-between rounded-[16px] bg-white-100 p-5 transition duration-300 hover:bg-[#e1e2e6] dark:bg-dark-800 dark:hover:bg-dark-700"
       >
         <div className="flex w-full flex-col justify-between gap-y-2">
           <div className="flex flex-row items-start">

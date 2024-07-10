@@ -22,7 +22,7 @@ const MeetupCard = ({ meetup, index = 1 }: MeetupCardProps) => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="group flex cursor-pointer flex-col rounded-[16px] bg-white-100 p-5 duration-300 hover:bg-[#e1e2e6] dark:bg-dark-800 dark:hover:bg-dark-700">
+        <div className="group/contentcard flex cursor-pointer flex-col rounded-[16px] bg-white-100 p-5 duration-300 hover:bg-[#e1e2e6] dark:bg-dark-800 dark:hover:bg-dark-700">
           <Link
             href={`/meetups/${meetup.id}`}
             className="flex flex-col gap-y-4"
@@ -40,7 +40,7 @@ const MeetupCard = ({ meetup, index = 1 }: MeetupCardProps) => {
                   <h3 className="paragraph-1-bold max-lg:paragraph-3-bold text-dark-800 max-lg:line-clamp-1 dark:text-white-200">
                     {meetup?.title}
                   </h3>
-                  <p className="paragraph-3-regular text-white-400 duration-300 group-hover:text-dark-700 max-lg:line-clamp-1 dark:group-hover:text-white-300">
+                  <p className="paragraph-3-regular text-white-400 duration-300 group-hover/contentcard:text-dark-700 max-lg:line-clamp-1 dark:group-hover/contentcard:text-white-300">
                     {meetup?.address}
                   </p>
                 </div>
