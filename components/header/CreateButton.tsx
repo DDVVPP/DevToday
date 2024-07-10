@@ -26,8 +26,8 @@ const CreateButton = () => {
       <Tooltip>
         <Popover key={"menuPopover" + isMobile}>
           <TooltipTrigger>
-            <PopoverTrigger className="group rounded-md p-3 transition duration-300 hover:bg-primary-500">
-              <Plus className="fill-white-400 transition duration-300 group-hover:fill-white-100 dark:fill-white-300" />
+            <PopoverTrigger className="group rounded-md p-3 duration-300 hover:bg-primary-500">
+              <Plus className="fill-white-400 duration-300 group-hover:fill-white-100 dark:fill-white-300" />
             </PopoverTrigger>
           </TooltipTrigger>
           <TooltipContent

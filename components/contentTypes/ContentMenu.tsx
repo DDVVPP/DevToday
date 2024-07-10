@@ -88,7 +88,7 @@ const ContentMenu = ({
           align="end"
         >
           <div
-            className="relative flex cursor-pointer items-center gap-x-3 p-3 transition duration-300 hover:rounded hover:bg-white-200 hover:p-3 dark:hover:bg-dark-700"
+            className="relative flex cursor-pointer items-center gap-x-3 p-3 duration-300 hover:rounded hover:bg-white-200 hover:p-3 dark:hover:bg-dark-700"
             onClick={() =>
               router.push(
                 `/${lowerCaseContentCategory}s/${contentId}/edit-${lowerCaseContentCategory}`
@@ -103,7 +103,7 @@ const ContentMenu = ({
 
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger
-              className="flex cursor-pointer items-center gap-x-3 p-3 transition duration-300 hover:rounded hover:bg-white-200 hover:p-3 dark:hover:bg-dark-700"
+              className="flex cursor-pointer items-center gap-x-3 p-3 duration-300 hover:rounded hover:bg-white-200 hover:p-3 dark:hover:bg-dark-700"
               onClick={() => setOpen((open) => !open)}
             >
               <Trash size={18} className="fill-none stroke-[#FF584D]" />

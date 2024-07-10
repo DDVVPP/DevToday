@@ -58,13 +58,13 @@ const ContentLeftSidebar = ({
 
       <button
         type="button"
-        className="paragraph-3-medium group flex items-center justify-center gap-x-2 rounded bg-[#c9ccd2] p-2.5 transition duration-300 hover:bg-primary-500  max-md-b:hidden dark:bg-dark-700"
+        className="paragraph-3-medium group flex items-center justify-center gap-x-2 rounded bg-[#c9ccd2] p-2.5 duration-300 hover:bg-primary-500  max-md-b:hidden dark:bg-dark-700"
       >
         <Share
           size={14}
-          className="fill-dark-700 transition duration-300 group-hover:fill-white-100 dark:fill-white-300"
+          className="fill-dark-700 duration-300 group-hover:fill-white-100 dark:fill-white-300"
         />
-        <p className="text-dark-700 transition duration-300 group-hover:text-white-100 dark:text-white-300">
+        <p className="text-dark-700 duration-300 group-hover:text-white-100 dark:text-white-300">
           Share Post
         </p>
       </button>
@@ -73,7 +73,7 @@ const ContentLeftSidebar = ({
         <div>
           <Link
             href={`/profile/${id}`}
-            className="mr-1 text-[#5D95E8] transition duration-300 hover:text-blue-300"
+            className="mr-1 text-[#5D95E8] duration-300 hover:text-blue-300"
           >
             {username ?? "Username is missing!"}
           </Link>
