@@ -88,7 +88,7 @@ const ContentRightSidebar = ({
         <div className="flex flex-col gap-y-3 py-5">
           {!isAuthor && (
             <button
-              className="paragraph-3-bold flex w-full justify-center rounded bg-white-200 p-2.5 disabled:bg-[#C5D0E666] disabled:text-primary-500 dark:bg-dark-700 dark:text-white-200 disabled:dark:bg-dark-900"
+              className="paragraph-3-bold flex w-full justify-center rounded bg-white-200 p-2.5 transition duration-300 hover:bg-primary-500 hover:text-white-100 disabled:border disabled:border-white-border disabled:bg-white-100 disabled:text-primary-500 dark:bg-dark-700 dark:text-white-200 dark:disabled:border-dark-border disabled:dark:bg-dark-800"
               disabled={isFollowing || pending}
               onClick={() => !isFollowing && handleFollow()}
             >
@@ -96,18 +96,19 @@ const ContentRightSidebar = ({
             </button>
           )}
 
-          <div className="paragraph-3-bold flex w-full justify-center rounded bg-white-200 p-2.5 dark:bg-dark-700 dark:text-white-200">
-            {isLoadingProfile ? (
-              <Loader2 className=" ml-2 animate-spin" />
-            ) : (
-              <Link
-                href={`/profile/${id}`}
-                onClick={() => setIsLoadingProfile(true)}
-              >
-                Visit Profile
-              </Link>
-            )}
-          </div>
+          {isLoadingProfile ? (
+            <div className="flex w-full justify-center rounded bg-white-200 p-2.5 dark:bg-dark-700 dark:text-white-200">
+              <Loader2 className="ml-2 animate-spin" />
+            </div>
+          ) : (
+            <Link
+              href={`/profile/${id}`}
+              onClick={() => setIsLoadingProfile(true)}
+              className="paragraph-3-bold flex w-full justify-center rounded bg-white-200 p-2.5 transition duration-300 hover:bg-primary-500 hover:text-white-100 dark:bg-dark-700 dark:text-white-200"
+            >
+              <p>Visit Profile</p>
+            </Link>
+          )}
         </div>
 
         <p className="paragraph-2-medium text-white-400">
