@@ -93,7 +93,7 @@ export async function _getPostById(id: string) {
 }
 
 export const getPostById = unstable_cache(_getPostById, ["_getPostById"], {
-  tags: ["getPostById", "commentPages", "likes"],
+  tags: ["getPostById", "commentPages", "likes", "unfollow", "follow"],
   revalidate: 1,
 });
 

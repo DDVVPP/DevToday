@@ -108,7 +108,7 @@ export const getMeetupById = unstable_cache(
   _getMeetupById,
   ["_getMeetupById"],
   {
-    tags: ["getMeetupById", "commentPages", "likes"],
+    tags: ["getMeetupById", "commentPages", "likes", "unfollow", "follow"],
     revalidate: 1,
   }
 );

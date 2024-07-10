@@ -88,7 +88,7 @@ const ContentRightSidebar = ({
         <div className="flex flex-col gap-y-3 py-5">
           {!isAuthor && (
             <button
-              className="paragraph-3-bold flex w-full justify-center rounded bg-white-200 p-2.5 disabled:bg-[#C5D0E666] disabled:text-primary-500 dark:bg-dark-700 dark:text-white-200 disabled:dark:bg-dark-900"
+              className="paragraph-3-bold flex w-full justify-center rounded bg-white-200 p-2.5 transition duration-300 hover:bg-primary-500 hover:text-white-100 disabled:border disabled:border-white-border disabled:bg-white-100 disabled:text-primary-500 dark:bg-dark-700 dark:text-white-200 dark:disabled:border-dark-border disabled:dark:bg-dark-800"
               disabled={isFollowing || pending}
               onClick={() => !isFollowing && handleFollow()}
             >
@@ -96,18 +96,19 @@ const ContentRightSidebar = ({
             </button>
           )}
 
-          <div className="paragraph-3-bold flex w-full justify-center rounded bg-white-200 p-2.5 dark:bg-dark-700 dark:text-white-200">
-            {isLoadingProfile ? (
-              <Loader2 className=" ml-2 animate-spin" />
-            ) : (
-              <Link
-                href={`/profile/${id}`}
-                onClick={() => setIsLoadingProfile(true)}
-              >
-                Visit Profile
-              </Link>
-            )}
-          </div>
+          {isLoadingProfile ? (
+            <div className="flex w-full justify-center rounded bg-white-200 p-2.5 dark:bg-dark-700 dark:text-white-200">
+              <Loader2 className="ml-2 animate-spin" />
+            </div>
+          ) : (
+            <Link
+              href={`/profile/${id}`}
+              onClick={() => setIsLoadingProfile(true)}
+              className="paragraph-3-bold flex w-full justify-center rounded bg-white-200 p-2.5 transition duration-300 hover:bg-primary-500 hover:text-white-100 dark:bg-dark-700 dark:text-white-200"
+            >
+              <p>Visit Profile</p>
+            </Link>
+          )}
         </div>
 
         <p className="paragraph-2-medium text-white-400">
@@ -117,16 +118,16 @@ const ContentRightSidebar = ({
         </p>
       </section>
 
-      <section className="paragraph-2-medium flex flex-col space-y-5 rounded-lg bg-white-100 px-6 py-8 dark:bg-dark-800">
-        <div className="flex items-center space-x-2">
-          <p className="paragraph-bold-2 text-dark-800 dark:text-white-200">
+      <section className="paragraph-2-medium flex flex-col gap-y-5 rounded-lg bg-white-100 px-6 py-8 dark:bg-dark-800">
+        <div className="flex items-center">
+          <p className="paragraph-bold-2 pl-2 text-dark-800 dark:text-white-200">
             More from {fullName}
           </p>
-
-          <Arrow className="stroke-dark-800 dark:stroke-white-200" size={16} />
+          {/* TO DO: Add back when functionality to view all content is added */}
+          {/* <Arrow className="stroke-dark-800 dark:stroke-white-200" size={16} /> */}
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col">
           {contentList.length > 1 ? (
             contentList.map((item: Post | Podcast | Meetup) => {
               return (
@@ -134,7 +135,7 @@ const ContentRightSidebar = ({
                   <Link
                     href={`/${contentCategory.toLowerCase()}s/${item.id}`}
                     key={item.id}
-                    className="group flex gap-x-3 "
+                    className="group flex gap-x-3 rounded-lg p-2 transition duration-300 hover:bg-white-200 dark:hover:bg-dark-700"
                   >
                     {item.image ? (
                       <div className="relative size-16 shrink-0">
@@ -150,17 +151,14 @@ const ContentRightSidebar = ({
                     )}
 
                     <div className="flex flex-col justify-between">
-                      <p className="paragraph-4-medium text-left text-dark-800 group-hover:text-primary-500 dark:text-white-200">
+                      <p className="paragraph-4-medium text-left text-dark-800 dark:text-white-200 dark:group-hover:text-white-100">
                         {item.title}
                       </p>
-                      <p className="subtitle-regular text-left text-white-400 group-hover:text-primary-500">
+                      <p className="subtitle-regular text-left text-white-400">
                         by {fullName}
                       </p>
                     </div>
-                    <Arrow
-                      className="stroke-white-400 group-hover:stroke-primary-500 "
-                      size={16}
-                    />
+                    <Arrow className="stroke-white-400" size={16} />
                   </Link>
                 )
               );

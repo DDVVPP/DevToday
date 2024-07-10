@@ -127,8 +127,7 @@ export const followUser = async (fromClerkID: string, toUserId: number) => {
       },
     });
     revalidateTag("User");
-    revalidateTag("getPostById");
-    revalidateTag("getGroupById");
+    revalidateTag("follow");
     return { user };
   } catch (error) {
     return { error: "There was an error following the user." };
@@ -147,6 +146,7 @@ export const unfollowUser = async (fromClerkID: string, toUserId: number) => {
       },
     });
     revalidateTag("User");
+    revalidateTag("unfollow");
     return { user };
   } catch (error) {
     return { error: "There was an error unfollowing the user." };

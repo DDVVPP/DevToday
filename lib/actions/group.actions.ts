@@ -185,7 +185,7 @@ export async function _getGroupById(id: string) {
 }
 
 export const getGroupById = unstable_cache(_getGroupById, ["_getGroupById"], {
-  tags: ["getGroupById", "commentPages", "likes"],
+  tags: ["getGroupById", "commentPages", "likes", "unfollow", "follow"],
   revalidate: 1,
 });
 
