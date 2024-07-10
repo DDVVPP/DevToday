@@ -13,7 +13,7 @@ const BottomLSidebar = async ({
       const groups = await getDynamicGroups(1, "popular", 5);
 
       return (
-        <div className="flex w-full  flex-col  justify-start gap-y-3.5 bg-white-100  dark:bg-dark-800">
+        <div className="flex w-full  flex-col  justify-start gap-y-1 bg-white-100  dark:bg-dark-800">
           {groups &&
             groups?.groups?.map((group, idx) => (
               <GroupTag active={false} key={idx} group={group} />
@@ -33,10 +33,10 @@ const BottomLSidebar = async ({
     );
   };
   return (
-    <div className="sidebar-padding flex w-full flex-col rounded-2xl max-lg:hidden">
-      <div className="flex w-full flex-col gap-x-[3px] gap-y-3 bg-white-100 dark:bg-dark-800">
+    <div className="flex w-full flex-col rounded-2xl bg-white-100 pb-3 pl-[24px] pr-[20px] max-lg:hidden dark:bg-dark-800">
+      <div className="flex w-full flex-col bg-white-100 dark:bg-dark-800">
         <div className="paragraph-2-bold flex justify-start  text-dark-900 dark:text-white-200">
-          <span>
+          <span className="mb-2 ml-1 mt-5">
             {contentType !== "groups" ? "Popular Groups" : "Active Groups"}
           </span>
         </div>

@@ -11,7 +11,10 @@ const GroupTag = async ({
   active: boolean;
 }) => {
   return (
-    <Link href={`/groups/${group.id}`}>
+    <Link
+      href={`/groups/${group.id}`}
+      className="rounded p-1 duration-300 hover:bg-white-200 dark:hover:bg-dark-700"
+    >
       <div className="line-clamp-1 flex justify-normal  gap-x-2.5 truncate lg:max-w-[169px]">
         <div className="flex items-center justify-center">
           <Image
