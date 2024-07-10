@@ -24,7 +24,7 @@ const Pagination = ({ totalPages, currentPage }: PaginationProps) => {
   return (
     <div className="flex h-10 items-center gap-x-8">
       <Button
-        className="w-[100px] gap-x-2 bg-white-100 px-3.5 py-2.5 text-dark-900 dark:bg-dark-800 dark:text-white-100"
+        className="dark:hover:bg-dark-70 w-[100px] gap-x-2 bg-white-100 px-3.5 py-2.5 text-dark-900 duration-300 hover:bg-[#e1e2e6] dark:bg-dark-800 dark:text-white-100"
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
@@ -32,7 +32,7 @@ const Pagination = ({ totalPages, currentPage }: PaginationProps) => {
       </Button>
       <div className="dark:text-white-100">{`${currentPage} / ${totalPages}`}</div>
       <Button
-        className="w-[100px] gap-x-2 bg-white-100 px-3.5 py-2.5 text-dark-900 dark:bg-dark-800 dark:text-white-100"
+        className="w-[100px] gap-x-2 bg-white-100 px-3.5 py-2.5 text-dark-900 duration-300 hover:bg-[#e1e2e6] dark:bg-dark-800 dark:text-white-100 dark:hover:bg-dark-700"
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
