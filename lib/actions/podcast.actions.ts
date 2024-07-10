@@ -2,10 +2,12 @@
 
 import prisma from "@/db";
 import { auth } from "@clerk/nextjs/server";
+// eslint-disable-next-line camelcase
+import { unstable_cache } from "next/cache";
 import { Podcast } from "@prisma/client";
 import { IPodcastSchema } from "../validations/podcast.validations";
 
-export async function getPodcastById(id: string) {
+export async function _getPodcastById(id: string) {
   try {
     const podcast = await prisma.podcast.findUnique({
       where: {
@@ -33,6 +35,13 @@ export async function getPodcastById(id: string) {
     return { error: "An unexpected error occurred while returning podcast." };
   }
 }
+export const getPodcastById = unstable_cache(
+  _getPodcastById,
+  ["_getPodcastById"],
+  {
+    tags: ["getPodcastById", "unfollow", "follow"],
+  }
+);
 
 export async function incrementPodcastLikes(id: number, increase: boolean) {
   try {
