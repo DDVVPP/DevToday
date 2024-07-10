@@ -69,16 +69,18 @@ const ContentLeftSidebar = ({
         </p>
       </button>
 
-      <div className="paragraph-2-medium flex rounded-lg bg-white-100 p-4 text-white-400 max-md-b:hidden dark:bg-dark-800">
-        <Link
-          href={`/profile/${id}`}
-          className="mr-1 text-[#5D95E8] transition duration-300 hover:text-blue-300"
-        >
-          {username ?? "Username is missing!"}
-        </Link>
-        {postedOnDate
-          ? ` Posted on ${postedOnDate}`
-          : " Posted on date missing"}
+      <div className="paragraph-2-medium flex rounded-lg bg-white-100 p-4 text-center text-white-400 max-md-b:hidden dark:bg-dark-800">
+        <div>
+          <Link
+            href={`/profile/${id}`}
+            className="mr-1 text-[#5D95E8] transition duration-300 hover:text-blue-300"
+          >
+            {username ?? "Username is missing!"}
+          </Link>
+          {postedOnDate
+            ? ` Posted on ${postedOnDate}`
+            : " Posted on date missing"}
+        </div>
       </div>
     </section>
   );
