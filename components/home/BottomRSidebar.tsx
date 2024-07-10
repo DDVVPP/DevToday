@@ -111,7 +111,8 @@ const BottomRSidebar = async ({
         <span className="paragraph-2-bold capitalize">
           {contentType && typeHeading}
         </span>
-        <RightArrow className="fill-dark-800 dark:fill-white-200" />
+        {/* Bring back once All Meetups functionality has been implemented */}
+        {/* <RightArrow className="fill-dark-800 dark:fill-white-200" /> */}
       </div>
       <>{await renderContent(contentType)}</>
     </div>

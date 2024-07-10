@@ -23,7 +23,8 @@ const TopRightSidebar = async ({
             <span className="paragraph-2-bold capitalize dark:bg-dark-800 dark:text-white-100">
               {heading}
             </span>
-            <RightArrow className="fill-dark-800 dark:fill-white-200" />
+            {/* Bring back once All Meetups functionality has been implemented */}
+            {/* <RightArrow className="fill-dark-800 dark:fill-white-200" /> */}
           </div>
           <div className="flex justify-between">
             {" "}
@@ -53,7 +54,8 @@ const TopRightSidebar = async ({
             <span className="paragraph-2-bold capitalize dark:bg-dark-800 dark:text-white-100">
               {heading}
             </span>
-            <RightArrow className="fill-dark-800 dark:fill-white-200" />
+            {/* Bring back once All Meetups functionality has been implemented */}
+            {/* <RightArrow className="fill-dark-800 dark:fill-white-200" /> */}
           </div>
           <div className="flex flex-col gap-y-5">
             {meetups?.meetups.map((meetup, idx) => (
@@ -82,7 +84,8 @@ const TopRightSidebar = async ({
             <span className="paragraph-2-bold capitalize dark:bg-dark-800 dark:text-white-100">
               {heading}
             </span>
-            <RightArrow className="fill-dark-800 dark:fill-white-200" />
+            {/* Bring back once All Meetups functionality has been implemented */}
+            {/* <RightArrow className="fill-dark-800 dark:fill-white-200" /> */}
           </div>
           <div className="flex flex-col gap-y-5">
             {meetups?.meetups.map((meetup, idx) => (
