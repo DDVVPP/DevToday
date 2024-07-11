@@ -1,3 +1,4 @@
+import { ProfilePlaceholder } from "@/components/ui";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import React from "react";
 interface GroupAvatarsProps {
@@ -25,13 +26,16 @@ const GroupAvatars = ({ members, count }: GroupAvatarsProps) => {
         <div key={index} className="w-[18px]">
           <Avatar
             key={member.id}
-            className="bg-#E8E1FF size-[30px] dark:bg-white-100"
+            className="bg-#E8E1FF flex size-[26px] dark:bg-white-100"
           >
             <AvatarImage
               src={member.image}
               alt="avatar"
-              className="m-[3px] size-[24px] items-center rounded-full"
+              className="size-[26px] items-center rounded-full"
             />
+            <AvatarFallback>
+              <ProfilePlaceholder size={26} />
+            </AvatarFallback>
           </Avatar>
         </div>
       ))}
