@@ -49,7 +49,7 @@ const RecentItem = ({ image, title, author, id }: RecentItemProps) => {
               {title}
             </span>
 
-            <RightArrow className="size-[20px] fill-none stroke-white-400 align-top" />
+            <RightArrow className="size-[20px] fill-white-400 stroke-white-400 align-top" />
           </div>
           <span className="subtitle-regular text-white-400">by {author}</span>
         </div>
