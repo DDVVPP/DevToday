@@ -48,7 +48,7 @@ const SidebarFilter = ({ className }: { className?: string }) => {
                     onSelect={() => handleSelectButton(button.key)}
                     className={`group flex w-full gap-x-1 rounded-md bg-white-100 px-0 py-1 text-dark-900 duration-300 hover:bg-white-200 hover:text-dark-900 dark:bg-dark-800 dark:hover:bg-dark-700 ${
                       active === button.key &&
-                      "bg-white-200 text-white-100 dark:bg-dark-800 dark:text-white-100"
+                      "bg-white-200 text-white-100 dark:bg-dark-700 dark:text-white-100"
                     }`}
                   />
                 </div>
