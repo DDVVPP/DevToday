@@ -17,7 +17,7 @@ const GroupSidebar = async ({ type, filter }: GroupSidebarProps) => {
     >
       <div className="flex gap-[3px] text-left">
         <span className="paragraph-2-bold capitalize">Podcasts</span>
-        <RightArrow className="fill-dark-800 dark:fill-white-200" />
+        <RightArrow className="stroke-white-400 dark:stroke-white-200" />
       </div>
       <div className="flex flex-col gap-y-5">
         {podcasts?.podcasts.map((post, idx) => (
