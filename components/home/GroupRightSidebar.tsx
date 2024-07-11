@@ -21,17 +21,23 @@ const GroupSidebar = async ({ type, filter }: GroupSidebarProps) => {
         {/* <RightArrow className="stroke-white-400 dark:stroke-white-200" /> */}
       </div>
       <div className="flex flex-col gap-y-5">
-        {podcasts?.podcasts.map((post, idx) => (
-          <Link href={`/podcasts/${post.id}`} key={idx}>
-            <RecentItem
-              key={idx}
-              id={post.id}
-              title={post?.title!}
-              author={post?.user.username!}
-              image={post?.image!}
-            />
-          </Link>
-        ))}
+        {podcasts && podcasts.podcasts.length > 0 ? (
+          podcasts.podcasts.map((post, idx) => (
+            <Link href={`/podcasts/${post.id}`} key={idx}>
+              <RecentItem
+                key={idx}
+                id={post.id}
+                title={post?.title!}
+                author={post?.user.username!}
+                image={post?.image!}
+              />
+            </Link>
+          ))
+        ) : (
+          <h1 className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+            No Podcasts
+          </h1>
+        )}
       </div>
     </div>
   );

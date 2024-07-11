@@ -34,17 +34,23 @@ const BottomRSidebar = async ({
 
       return (
         <div className="flex flex-col gap-y-2 px-3.5">
-          {podcasts?.podcasts.map((podcast, idx) => (
-            <Link href={`/podcasts/${podcast.id}`} key={idx}>
-              <RecentItem
-                key={idx}
-                id={podcast.id}
-                title={podcast?.title!}
-                author={podcast?.user.username!}
-                image={podcast?.image!}
-              />
-            </Link>
-          ))}
+          {podcasts && podcasts.podcasts.length > 0 ? (
+            podcasts.podcasts.map((podcast, idx) => (
+              <Link href={`/podcasts/${podcast.id}`} key={idx}>
+                <RecentItem
+                  key={idx}
+                  id={podcast.id}
+                  title={podcast?.title!}
+                  author={podcast?.user.username!}
+                  image={podcast?.image!}
+                />
+              </Link>
+            ))
+          ) : (
+            <h1 className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+              No Podcasts
+            </h1>
+          )}
         </div>
       );
     }
@@ -54,17 +60,23 @@ const BottomRSidebar = async ({
 
       return (
         <div className="flex flex-col px-3.5">
-          {posts?.posts?.map((post, idx) => (
-            <Link href={`/posts/${post.id}`} key={idx}>
-              <RecentItem
-                key={idx}
-                id={post.id}
-                title={post?.title!}
-                author={post?.user.username!}
-                image={post?.image!}
-              />
-            </Link>
-          ))}
+          {posts && posts.posts.length > 0 ? (
+            posts?.posts?.map((post, idx) => (
+              <Link href={`/posts/${post.id}`} key={idx}>
+                <RecentItem
+                  key={idx}
+                  id={post.id}
+                  title={post?.title!}
+                  author={post?.user.username!}
+                  image={post?.image!}
+                />
+              </Link>
+            ))
+          ) : (
+            <h1 className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+              No Posts
+            </h1>
+          )}
         </div>
       );
     }
@@ -73,17 +85,23 @@ const BottomRSidebar = async ({
 
       return (
         <div className="flex flex-col px-3.5">
-          {podcasts?.podcasts.map((podcast, idx) => (
-            <Link href={`/podcasts/${podcast.id}`} key={idx}>
-              <RecentItem
-                key={idx}
-                id={podcast.id}
-                title={podcast?.title!}
-                author={podcast?.user.username!}
-                image={podcast?.image!}
-              />
-            </Link>
-          ))}
+          {podcasts && podcasts.podcasts.length > 0 ? (
+            podcasts?.podcasts.map((podcast, idx) => (
+              <Link href={`/podcasts/${podcast.id}`} key={idx}>
+                <RecentItem
+                  key={idx}
+                  id={podcast.id}
+                  title={podcast?.title!}
+                  author={podcast?.user.username!}
+                  image={podcast?.image!}
+                />
+              </Link>
+            ))
+          ) : (
+            <h1 className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+              No Podcasts
+            </h1>
+          )}
         </div>
       );
     }
@@ -91,17 +109,23 @@ const BottomRSidebar = async ({
       const posts = await getDynamicPosts(1, query, 2);
       return (
         <div className="flex flex-col px-3.5">
-          {posts?.posts?.map((post, idx) => (
-            <Link href={`/posts/${post.id}`} key={idx}>
-              <RecentItem
-                key={idx}
-                id={post.id}
-                title={post?.title!}
-                author={post?.user.username!}
-                image={post?.image!}
-              />
-            </Link>
-          ))}
+          {posts && posts.posts.length > 0 ? (
+            posts?.posts?.map((post, idx) => (
+              <Link href={`/posts/${post.id}`} key={idx}>
+                <RecentItem
+                  key={idx}
+                  id={post.id}
+                  title={post?.title!}
+                  author={post?.user.username!}
+                  image={post?.image!}
+                />
+              </Link>
+            ))
+          ) : (
+            <h1 className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+              No Posts
+            </h1>
+          )}
         </div>
       );
     }

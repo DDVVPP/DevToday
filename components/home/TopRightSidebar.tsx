@@ -29,17 +29,23 @@ const TopRightSidebar = async ({
           <div className="flex justify-between">
             {" "}
             <div className="flex flex-col gap-y-5">
-              {posts?.posts.map((post, idx) => (
-                <Link href={`/posts/${post.id}`} key={idx}>
-                  <RecentItem
-                    key={idx}
-                    id={post.id}
-                    image={post.image}
-                    author={post.user.username!}
-                    title={post.title}
-                  />
-                </Link>
-              ))}
+              {posts && posts.posts.length > 0 ? (
+                posts?.posts.map((post, idx) => (
+                  <Link href={`/posts/${post.id}`} key={idx}>
+                    <RecentItem
+                      key={idx}
+                      id={post.id}
+                      image={post.image}
+                      author={post.user.username!}
+                      title={post.title}
+                    />
+                  </Link>
+                ))
+              ) : (
+                <h1 className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+                  No Posts
+                </h1>
+              )}
             </div>
           </div>
         </>
@@ -58,19 +64,25 @@ const TopRightSidebar = async ({
             {/* <RightArrow className="fill-dark-800 dark:fill-white-200" /> */}
           </div>
           <div className="flex flex-col gap-y-5">
-            {meetups?.meetups.map((meetup, idx) => (
-              <Link href={`/meetups/${meetup.id}`} key={idx}>
-                <MeetupTag
-                  user={meetup.user}
-                  key={idx}
-                  id={meetup.id}
-                  meetupTitle={meetup?.title!}
-                  meetupLocation={meetup?.address}
-                  meetupTags={meetup.tags}
-                  startTime={meetup.startTime!}
-                />
-              </Link>
-            ))}
+            {meetups && meetups.meetups.length > 0 ? (
+              meetups?.meetups.map((meetup, idx) => (
+                <Link href={`/meetups/${meetup.id}`} key={idx}>
+                  <MeetupTag
+                    user={meetup.user}
+                    key={idx}
+                    id={meetup.id}
+                    meetupTitle={meetup?.title!}
+                    meetupLocation={meetup?.address}
+                    meetupTags={meetup.tags}
+                    startTime={meetup.startTime!}
+                  />
+                </Link>
+              ))
+            ) : (
+              <h1 className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+                No Meetups
+              </h1>
+            )}
           </div>
         </>
       );
@@ -88,19 +100,25 @@ const TopRightSidebar = async ({
             {/* <RightArrow className="fill-dark-800 dark:fill-white-200" /> */}
           </div>
           <div className="flex flex-col gap-y-5">
-            {meetups?.meetups.map((meetup, idx) => (
-              <Link href={`/meetups/${meetup.id}`} key={idx}>
-                <MeetupTag
-                  user={meetup.user}
-                  key={idx}
-                  id={meetup.id}
-                  meetupTitle={meetup?.title!}
-                  meetupLocation={meetup?.address}
-                  meetupTags={meetup.tags}
-                  startTime={meetup.startTime!}
-                />
-              </Link>
-            ))}
+            {meetups && meetups.meetups.length > 0 ? (
+              meetups?.meetups.map((meetup, idx) => (
+                <Link href={`/meetups/${meetup.id}`} key={idx}>
+                  <MeetupTag
+                    user={meetup.user}
+                    key={idx}
+                    id={meetup.id}
+                    meetupTitle={meetup?.title!}
+                    meetupLocation={meetup?.address}
+                    meetupTags={meetup.tags}
+                    startTime={meetup.startTime!}
+                  />
+                </Link>
+              ))
+            ) : (
+              <h1 className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+                No Meetups
+              </h1>
+            )}
           </div>
         </>
       );
