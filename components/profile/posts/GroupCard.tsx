@@ -98,12 +98,9 @@ const GroupCard = ({ group, userCount, profile }: GroupCardProps) => {
               </MotionDiv>
             )}
           </MotionDiv>
-          <MotionDiv
-            className="flex size-[30px] items-center justify-center rounded-full bg-white-200 duration-300 group-hover:bg-white-100 dark:bg-dark-700 dark:group-hover:bg-dark-800"
-            whileHover={{ rotate: 30 }}
-          >
+          <div className="flex size-[30px] items-center justify-center rounded-full bg-white-200 duration-300 group-hover:bg-white-100 dark:bg-dark-700 dark:group-hover:bg-dark-800">
             <CurvedArrows className="ml-[3px] fill-white-400 dark:fill-white-300" />
-          </MotionDiv>
+          </div>
         </div>
       </Link>
     </MotionDiv>
