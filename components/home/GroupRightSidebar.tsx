@@ -1,5 +1,5 @@
 import React from "react";
-import RightArrow from "../ui/icons/RightArrow";
+// import RightArrow from "../ui/icons/RightArrow";
 
 import RecentItem from "../profile/posts/RecentItem";
 import { getDynamicPodcasts } from "@/lib/actions/podcast.actions";
@@ -17,7 +17,8 @@ const GroupSidebar = async ({ type, filter }: GroupSidebarProps) => {
     >
       <div className="flex gap-[3px] text-left">
         <span className="paragraph-2-bold capitalize">Podcasts</span>
-        <RightArrow className="stroke-white-400 dark:stroke-white-200" />
+        {/* Bring back once All Meetups functionality has been implemented */}
+        {/* <RightArrow className="stroke-white-400 dark:stroke-white-200" /> */}
       </div>
       <div className="flex flex-col gap-y-5">
         {podcasts?.podcasts.map((post, idx) => (
