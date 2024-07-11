@@ -18,7 +18,7 @@ const GroupMeetupCard = ({ meetup }: { meetup: MeetupContent }) => {
       href={`/meetups/${meetup.id}`}
       className="group flex gap-x-4 rounded hover:bg-white-200 dark:hover:bg-dark-700"
     >
-      <div className="flex h-[66px] min-w-[45px] flex-col items-center justify-center rounded bg-white-200 dark:bg-dark-700">
+      <div className="flex h-[66px] min-w-[45px] flex-col items-center justify-center rounded bg-white-200 group-hover:bg-white-100 dark:bg-dark-700 group-hover:dark:bg-dark-800">
         <p className="paragraph-4-regular uppercase text-dark-800 dark:text-white-200">
           {startMonth}
         </p>
@@ -42,7 +42,7 @@ const GroupMeetupCard = ({ meetup }: { meetup: MeetupContent }) => {
             {meetup.address}
           </p>
         </div>
-        <div className="mt-2 flex items-center gap-x-1 group-hover:pb-1">
+        <div className="mt-2 flex items-center gap-x-1">
           {meetup.tags.length > 0 &&
             meetup.tags.map((tag: string) => {
               return (

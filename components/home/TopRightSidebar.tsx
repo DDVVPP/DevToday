@@ -1,5 +1,5 @@
 import React from "react";
-import RightArrow from "../ui/icons/RightArrow";
+// import RightArrow from "../ui/icons/RightArrow";
 import MeetupTag from "../shared/MeetupTag";
 import { getDynamicMeetups } from "@/lib/actions/meetup.actions";
 import { getDynamicPosts } from "@/lib/actions/post.actions";
@@ -51,7 +51,7 @@ const TopRightSidebar = async ({
       return (
         <>
           <div className="flex gap-[3px] text-left">
-            <span className="paragraph-2-bold capitalize dark:bg-dark-800 dark:text-white-100">
+            <span className="paragraph-2-bold dark:text-white-10 pl-1 capitalize dark:bg-dark-800">
               {heading}
             </span>
             {/* Bring back once All Meetups functionality has been implemented */}
@@ -108,7 +108,7 @@ const TopRightSidebar = async ({
   };
 
   return (
-    <div className="flex w-full flex-col gap-y-[10px]  rounded-2xl bg-white-100 p-5 max-lg:hidden  dark:bg-dark-800 dark:text-white-200">
+    <div className="flex w-full flex-col gap-y-[10px]  rounded-2xl bg-white-100 py-5 pl-4 pr-5 max-lg:hidden  dark:bg-dark-800 dark:text-white-200">
       {renderContent(contentType)}
     </div>
   );

@@ -8,7 +8,7 @@ const SidebarTags = async () => {
   return (
     <div className="sidebar-padding flex w-full flex-col rounded-2xl max-lg:hidden">
       <div className="flex flex-col gap-y-3">
-        <div className="paragraph-2-bold flex justify-start  text-dark-900 dark:text-white-200">
+        <div className="paragraph-2-bold mb-1 flex justify-start text-dark-900 dark:text-white-200">
           <span>Popular Tags</span>
         </div>
         <div className="flex flex-col gap-y-3.5">

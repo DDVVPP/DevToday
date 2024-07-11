@@ -1,5 +1,5 @@
 import React from "react";
-import RightArrow from "../ui/icons/RightArrow";
+// import RightArrow from "../ui/icons/RightArrow";
 import { getDynamicPodcasts } from "@/lib/actions/podcast.actions";
 import RecentItem from "../profile/posts/RecentItem";
 import { getDynamicPosts } from "@/lib/actions/post.actions";
@@ -33,7 +33,7 @@ const BottomRSidebar = async ({
       const podcasts = await getDynamicPodcasts(1, query, pageSize);
 
       return (
-        <div className="flex flex-col gap-y-5">
+        <div className="flex flex-col gap-y-2 px-3.5">
           {podcasts?.podcasts.map((podcast, idx) => (
             <Link href={`/podcasts/${podcast.id}`} key={idx}>
               <RecentItem
@@ -48,11 +48,12 @@ const BottomRSidebar = async ({
         </div>
       );
     }
+
     if (contentType === "podcasts") {
       const posts = await getDynamicPosts(1, query, pageSize);
 
       return (
-        <div className="flex flex-col gap-y-5">
+        <div className="flex flex-col px-3.5">
           {posts?.posts?.map((post, idx) => (
             <Link href={`/posts/${post.id}`} key={idx}>
               <RecentItem
@@ -71,7 +72,7 @@ const BottomRSidebar = async ({
       const podcasts = await getDynamicPodcasts(1, query, pageSize);
 
       return (
-        <div className="flex flex-col gap-y-5">
+        <div className="flex flex-col px-3.5">
           {podcasts?.podcasts.map((podcast, idx) => (
             <Link href={`/podcasts/${podcast.id}`} key={idx}>
               <RecentItem
@@ -89,7 +90,7 @@ const BottomRSidebar = async ({
     if (contentType === "groups") {
       const posts = await getDynamicPosts(1, query, 2);
       return (
-        <div className="flex flex-col gap-y-5">
+        <div className="flex flex-col px-3.5">
           {posts?.posts?.map((post, idx) => (
             <Link href={`/posts/${post.id}`} key={idx}>
               <RecentItem
@@ -105,9 +106,10 @@ const BottomRSidebar = async ({
       );
     }
   };
+
   return (
-    <div className="flex w-full flex-col gap-y-[10px] rounded-2xl  bg-white-100 p-5 max-lg:hidden dark:bg-dark-800 dark:text-white-200">
-      <div className="flex gap-[3px] text-left">
+    <div className="flex w-full flex-col  rounded-2xl bg-white-100 max-lg:hidden dark:bg-dark-800 dark:text-white-200">
+      <div className="mx-5 mb-2 mt-5 flex text-left">
         <span className="paragraph-2-bold capitalize">
           {contentType && typeHeading}
         </span>

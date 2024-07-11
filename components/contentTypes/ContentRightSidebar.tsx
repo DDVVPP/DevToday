@@ -149,22 +149,23 @@ const ContentRightSidebar = ({
                     ) : (
                       <div className="size-12 rounded dark:bg-white-300"></div>
                     )}
-
-                    <div className="flex flex-col justify-between">
-                      <p className="paragraph-4-medium text-left text-dark-800 dark:text-white-200 dark:group-hover:text-white-100">
-                        {item.title}
-                      </p>
-                      <p className="subtitle-regular text-left text-white-400">
-                        by {fullName}
-                      </p>
+                    <div className="flex w-full justify-between">
+                      <div className="flex flex-col justify-between">
+                        <p className="paragraph-4-medium text-left text-dark-800 dark:text-white-200 dark:group-hover:text-white-100">
+                          {item.title}
+                        </p>
+                        <p className="subtitle-regular text-left text-white-400">
+                          by {fullName}
+                        </p>
+                      </div>
+                      <Arrow className="stroke-white-400" size={16} />
                     </div>
-                    <Arrow className="stroke-white-400" size={16} />
                   </Link>
                 )
               );
             })
           ) : (
-            <p className="paragraph-3-regular text-white-400">
+            <p className="paragraph-3-regular ml-2 text-white-400">
               {fullName} has no additional content!
             </p>
           )}
