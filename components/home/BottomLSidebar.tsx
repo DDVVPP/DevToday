@@ -26,7 +26,7 @@ const BottomLSidebar = async ({
 
     return (
       <div className="flex w-full flex-col justify-start bg-white-100  dark:bg-dark-800">
-        {(active as TopRankGroups[])?.map((group: any, idx) => (
+        {(active && (active as TopRankGroups[]))?.map((group: any, idx) => (
           <GroupTag active key={idx} group={group} />
         ))}
       </div>
