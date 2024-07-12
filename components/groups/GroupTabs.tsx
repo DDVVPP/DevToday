@@ -48,7 +48,7 @@ const GroupTabs = ({
             <TabsTrigger
               key={tab}
               value={tab}
-              className="dark:text-white-30 max-md-b:paragraph-3-medium paragraph-1-medium flex w-1/5 rounded-[7px] px-2 text-white-400 transition duration-200 ease-in hover:bg-primary-500 hover:text-white-200"
+              className="dark:text-white-30 max-md-b:paragraph-3-medium paragraph-1-medium flex w-1/5 rounded-[7px] px-2 text-white-400 duration-200 ease-in hover:bg-primary-500 hover:text-white-200"
             >
               {tab}
             </TabsTrigger>

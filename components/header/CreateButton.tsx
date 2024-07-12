@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import {
   Popover,
@@ -21,15 +21,24 @@ import {
 const CreateButton = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const router = useRouter();
+  const [isClient, setIsClient] = useState(false); // To prevent hydration error
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <TooltipProvider delayDuration={0}>
       <Tooltip>
         <Popover key={"menuPopover" + isMobile}>
-          <TooltipTrigger>
-            <PopoverTrigger className="group rounded-md p-3 transition duration-300 hover:bg-primary-500">
-              <Plus className="fill-white-400 transition duration-300 group-hover:fill-white-100 dark:fill-white-300" />
-            </PopoverTrigger>
-          </TooltipTrigger>
+          {isClient && (
+            <TooltipTrigger>
+              <PopoverTrigger className="group rounded-md p-3 duration-300 hover:bg-primary-500">
+                <Plus className="fill-white-400 duration-300 group-hover:fill-white-100 dark:fill-white-300" />
+              </PopoverTrigger>
+            </TooltipTrigger>
+          )}
+
           <TooltipContent
             className="caption-10 border border-white-border text-dark-700 dark:border-dark-800 dark:bg-dark-700 dark:text-white-100"
             align="center"
@@ -42,16 +51,15 @@ const CreateButton = () => {
           >
             <div className="mx-1 flex flex-col gap-y-1">
               {createMenuItems.map((item) => (
-                <>
+                <Fragment key={item.key}>
                   <Button
-                    key={item.key}
                     onClick={() => router.push(item.route)}
                     className="paragraph-3-medium align-self-start flex w-full content-start items-center justify-start gap-x-1 rounded-md bg-white-100 align-middle text-dark-900 ring-0 hover:bg-primary-100 dark:bg-dark-800  dark:text-white-200 dark:hover:bg-primary-500"
                   >
                     <ThinPlus className="size-4 self-center" />
                     <span>{item.label}</span>
                   </Button>
-                </>
+                </Fragment>
               ))}
             </div>
           </PopoverContent>

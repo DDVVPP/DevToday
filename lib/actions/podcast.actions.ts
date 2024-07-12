@@ -15,6 +15,8 @@ export async function _getPodcastById(id: string) {
       },
       include: {
         comment: {
+          take: 4,
+          orderBy: { createdAt: "desc" },
           include: {
             author: true,
           },
@@ -39,7 +41,7 @@ export const getPodcastById = unstable_cache(
   _getPodcastById,
   ["_getPodcastById"],
   {
-    tags: ["getPodcastById", "unfollow", "follow"],
+    tags: ["getPodcastById", "commentPages", "unfollow", "follow"],
   }
 );
 

@@ -1,5 +1,5 @@
 import React from "react";
-import RightArrow from "../ui/icons/RightArrow";
+// import RightArrow from "../ui/icons/RightArrow";
 
 import RecentItem from "../profile/posts/RecentItem";
 import { getDynamicPodcasts } from "@/lib/actions/podcast.actions";
@@ -17,20 +17,27 @@ const GroupSidebar = async ({ type, filter }: GroupSidebarProps) => {
     >
       <div className="flex gap-[3px] text-left">
         <span className="paragraph-2-bold capitalize">Podcasts</span>
-        <RightArrow className="fill-dark-800 dark:fill-white-200" />
+        {/* Bring back once All Meetups functionality has been implemented */}
+        {/* <RightArrow className="stroke-white-400 dark:stroke-white-200" /> */}
       </div>
       <div className="flex flex-col gap-y-5">
-        {podcasts?.podcasts.map((post, idx) => (
-          <Link href={`/podcasts/${post.id}`} key={idx}>
-            <RecentItem
-              key={idx}
-              id={post.id}
-              title={post?.title!}
-              author={post?.user.username!}
-              image={post?.image!}
-            />
-          </Link>
-        ))}
+        {podcasts && podcasts.podcasts.length > 0 ? (
+          podcasts.podcasts.map((post, idx) => (
+            <Link href={`/podcasts/${post.id}`} key={idx}>
+              <RecentItem
+                key={idx}
+                id={post.id}
+                title={post?.title!}
+                author={post?.user.username!}
+                image={post?.image!}
+              />
+            </Link>
+          ))
+        ) : (
+          <h1 className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+            No Podcasts
+          </h1>
+        )}
       </div>
     </div>
   );

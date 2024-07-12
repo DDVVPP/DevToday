@@ -29,7 +29,7 @@ const PostCard = ({ post, userData, index = 1 }: PostCardProps) => {
         transition={{ duration: 0.5 }}
       >
         <div
-          className={`group min-h-[200px] cursor-pointer gap-x-5 gap-y-2.5 rounded-[16px] bg-white-100 p-5 text-dark-800 transition duration-300 hover:bg-[#e1e2e6] dark:bg-dark-800 dark:text-white-100 dark:hover:bg-dark-700`}
+          className={`group/contentcard min-h-[200px] cursor-pointer gap-x-5 gap-y-2.5 rounded-[16px] bg-white-100 p-5 text-dark-800 duration-300 hover:bg-[#e1e2e6] dark:bg-dark-800 dark:text-white-100 dark:hover:bg-dark-700`}
         >
           <Link href={`/posts/${post.id}`}>
             <div className="min-size-[50px] float-left">
@@ -78,7 +78,7 @@ const PostCard = ({ post, userData, index = 1 }: PostCardProps) => {
               </div>
               {/* user and aggregates */}
               <div className="my-1 flex w-full justify-between gap-x-3 gap-y-2 align-bottom max-xl:my-0 max-xl:w-full max-xl:flex-col max-lg:flex-col lg:ml-3">
-                <Link href={`/profile/${userData?.id}`}>
+                <Link href={`/profile/${userData?.id}`} className="w-fit">
                   <UserSection
                     image={userData?.image!}
                     username={userData?.username!}

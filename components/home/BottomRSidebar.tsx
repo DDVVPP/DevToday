@@ -1,5 +1,5 @@
 import React from "react";
-import RightArrow from "../ui/icons/RightArrow";
+// import RightArrow from "../ui/icons/RightArrow";
 import { getDynamicPodcasts } from "@/lib/actions/podcast.actions";
 import RecentItem from "../profile/posts/RecentItem";
 import { getDynamicPosts } from "@/lib/actions/post.actions";
@@ -33,37 +33,50 @@ const BottomRSidebar = async ({
       const podcasts = await getDynamicPodcasts(1, query, pageSize);
 
       return (
-        <div className="flex flex-col gap-y-5">
-          {podcasts?.podcasts.map((podcast, idx) => (
-            <Link href={`/podcasts/${podcast.id}`} key={idx}>
-              <RecentItem
-                key={idx}
-                id={podcast.id}
-                title={podcast?.title!}
-                author={podcast?.user.username!}
-                image={podcast?.image!}
-              />
-            </Link>
-          ))}
+        <div className="flex flex-col gap-y-2 px-3.5">
+          {podcasts && podcasts.podcasts.length > 0 ? (
+            podcasts.podcasts.map((podcast, idx) => (
+              <Link href={`/podcasts/${podcast.id}`} key={idx}>
+                <RecentItem
+                  key={idx}
+                  id={podcast.id}
+                  title={podcast?.title!}
+                  author={podcast?.user.username!}
+                  image={podcast?.image!}
+                />
+              </Link>
+            ))
+          ) : (
+            <h1 className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+              No Podcasts
+            </h1>
+          )}
         </div>
       );
     }
+
     if (contentType === "podcasts") {
       const posts = await getDynamicPosts(1, query, pageSize);
 
       return (
-        <div className="flex flex-col gap-y-5">
-          {posts?.posts?.map((post, idx) => (
-            <Link href={`/posts/${post.id}`} key={idx}>
-              <RecentItem
-                key={idx}
-                id={post.id}
-                title={post?.title!}
-                author={post?.user.username!}
-                image={post?.image!}
-              />
-            </Link>
-          ))}
+        <div className="flex flex-col px-3.5">
+          {posts && posts.posts.length > 0 ? (
+            posts?.posts?.map((post, idx) => (
+              <Link href={`/posts/${post.id}`} key={idx}>
+                <RecentItem
+                  key={idx}
+                  id={post.id}
+                  title={post?.title!}
+                  author={post?.user.username!}
+                  image={post?.image!}
+                />
+              </Link>
+            ))
+          ) : (
+            <h1 className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+              No Posts
+            </h1>
+          )}
         </div>
       );
     }
@@ -71,47 +84,61 @@ const BottomRSidebar = async ({
       const podcasts = await getDynamicPodcasts(1, query, pageSize);
 
       return (
-        <div className="flex flex-col gap-y-5">
-          {podcasts?.podcasts.map((podcast, idx) => (
-            <Link href={`/podcasts/${podcast.id}`} key={idx}>
-              <RecentItem
-                key={idx}
-                id={podcast.id}
-                title={podcast?.title!}
-                author={podcast?.user.username!}
-                image={podcast?.image!}
-              />
-            </Link>
-          ))}
+        <div className="flex flex-col px-3.5">
+          {podcasts && podcasts.podcasts.length > 0 ? (
+            podcasts?.podcasts.map((podcast, idx) => (
+              <Link href={`/podcasts/${podcast.id}`} key={idx}>
+                <RecentItem
+                  key={idx}
+                  id={podcast.id}
+                  title={podcast?.title!}
+                  author={podcast?.user.username!}
+                  image={podcast?.image!}
+                />
+              </Link>
+            ))
+          ) : (
+            <h1 className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+              No Podcasts
+            </h1>
+          )}
         </div>
       );
     }
     if (contentType === "groups") {
       const posts = await getDynamicPosts(1, query, 2);
       return (
-        <div className="flex flex-col gap-y-5">
-          {posts?.posts?.map((post, idx) => (
-            <Link href={`/posts/${post.id}`} key={idx}>
-              <RecentItem
-                key={idx}
-                id={post.id}
-                title={post?.title!}
-                author={post?.user.username!}
-                image={post?.image!}
-              />
-            </Link>
-          ))}
+        <div className="flex flex-col px-3.5">
+          {posts && posts.posts.length > 0 ? (
+            posts?.posts?.map((post, idx) => (
+              <Link href={`/posts/${post.id}`} key={idx}>
+                <RecentItem
+                  key={idx}
+                  id={post.id}
+                  title={post?.title!}
+                  author={post?.user.username!}
+                  image={post?.image!}
+                />
+              </Link>
+            ))
+          ) : (
+            <h1 className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+              No Posts
+            </h1>
+          )}
         </div>
       );
     }
   };
+
   return (
-    <div className="flex w-full flex-col gap-y-[10px] rounded-2xl  bg-white-100 p-5 max-lg:hidden dark:bg-dark-800 dark:text-white-200">
-      <div className="flex gap-[3px] text-left">
+    <div className="flex w-full flex-col  rounded-2xl bg-white-100 max-lg:hidden dark:bg-dark-800 dark:text-white-200">
+      <div className="mx-5 mb-2 mt-5 flex text-left">
         <span className="paragraph-2-bold capitalize">
           {contentType && typeHeading}
         </span>
-        <RightArrow className="fill-dark-800 dark:fill-white-200" />
+        {/* Bring back once All Meetups functionality has been implemented */}
+        {/* <RightArrow className="fill-dark-800 dark:fill-white-200" /> */}
       </div>
       <>{await renderContent(contentType)}</>
     </div>

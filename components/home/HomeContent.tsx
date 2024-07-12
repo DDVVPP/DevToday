@@ -8,8 +8,6 @@ import { getDynamicPodcasts } from "@/lib/actions/podcast.actions";
 import PodcastCard from "../profile/posts/PodcastCard";
 import { getDynamicGroups } from "@/lib/actions/group.actions";
 import GroupCard from "../profile/posts/GroupCard";
-import { Button } from "../ui/button";
-import Link from "next/link";
 
 interface HomeContentProps {
   type: "meetups" | "posts" | "podcasts" | "groups";
@@ -96,18 +94,6 @@ const HomeContent = async ({
 
       return (
         <div className="flex  w-full flex-1 flex-col ">
-          <div className="mb-4 flex items-center justify-between max-lg:my-4">
-            <span className="display-2-bold dark:text-white-100">
-              All Groups
-            </span>
-
-            <Button
-              title="Create a New Group"
-              className="paragraph-3-bold max-lg:paragraph-4-medium  h-9 rounded-sm bg-primary-500 hover:scale-105 max-lg:h-8"
-            >
-              <Link href={`/groups/create-group`}>Create a New Group</Link>
-            </Button>
-          </div>
           <div className="columns-2  gap-x-5 space-y-5 max-md:columns-1">
             {groups &&
               groups?.groups?.map((group) => (

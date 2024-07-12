@@ -15,7 +15,7 @@ const SearchResultCard = ({
 }) => {
   return (
     <button
-      className="group flex cursor-pointer gap-x-2 rounded px-6 py-1 transition duration-300 hover:bg-primary-500"
+      className="group flex cursor-pointer gap-x-2 rounded px-6 py-1 duration-300 hover:bg-primary-500"
       id={`${user.id}`}
       onClick={() => handleSelect(user)}
     >

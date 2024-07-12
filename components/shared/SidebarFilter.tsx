@@ -23,11 +23,11 @@ const SidebarFilter = ({ className }: { className?: string }) => {
     <div
       className={`filter-wrapper responsive-filter bg-white-100 dark:bg-dark-800 ${className}`}
     >
-      <div className="flex w-full flex-col lg:p-5">
-        <div className="paragraph-2-bold flex justify-start bg-white-100 text-dark-900 max-lg:hidden dark:bg-dark-800 dark:text-white-200">
+      <div className="flex w-full flex-col lg:p-4">
+        <div className="paragraph-2-bold mb-1 flex justify-start bg-white-100 pl-3 text-dark-900 max-lg:hidden dark:bg-dark-800 dark:text-white-200">
           <span>Sort & Filter</span>
         </div>
-        <div className="flex w-full flex-col justify-start gap-x-1 gap-y-2.5 py-1 max-lg:flex-row max-lg:justify-around max-lg:p-0 lg:pr-5">
+        <div className="flex w-full flex-col justify-start gap-x-1 gap-y-2.5 py-1 max-lg:flex-row max-lg:justify-center max-lg:p-0 lg:pr-5">
           {pathname === "/groups"
             ? groupSidebarButtons.map((button) => (
                 <div
@@ -46,7 +46,7 @@ const SidebarFilter = ({ className }: { className?: string }) => {
                     }
                     icon={getIcon(button.key)}
                     onSelect={() => handleSelectButton(button.key)}
-                    className={`flex w-full gap-x-1 rounded-md bg-white-100 px-0 py-1.5 text-dark-900 hover:bg-white-200 hover:text-dark-900 dark:bg-dark-800 dark:hover:bg-dark-700 dark:hover:text-white-200 ${
+                    className={`group flex w-full gap-x-1 rounded-md bg-white-100 px-0 py-1 text-dark-900 duration-300 hover:bg-white-200 hover:text-dark-900 dark:bg-dark-800 dark:hover:bg-dark-700 ${
                       active === button.key &&
                       "bg-white-200 text-white-100 dark:bg-dark-700 dark:text-white-100"
                     }`}
@@ -56,9 +56,9 @@ const SidebarFilter = ({ className }: { className?: string }) => {
             : sidebarButtons.map((button) => (
                 <div
                   key={button.key}
-                  className={`w-full rounded-md  ${
+                  className={`w-full rounded-md px-2  ${
                     active === button.key &&
-                    "items-center rounded-md bg-white-200  text-white-100 dark:bg-dark-700 dark:text-white-100"
+                    "items-center rounded-md bg-white-200 text-white-100 dark:bg-dark-700 dark:text-white-100"
                   }`}
                 >
                   <SidebarButton
@@ -70,7 +70,7 @@ const SidebarFilter = ({ className }: { className?: string }) => {
                     }
                     icon={getIcon(button.key)}
                     onSelect={() => handleSelectButton(button.key)}
-                    className={`flex w-full gap-x-1 rounded-md bg-white-100 px-0 py-1.5 text-dark-900 hover:bg-white-200 hover:text-dark-900 dark:bg-dark-800 dark:hover:bg-dark-700 dark:hover:text-white-200 ${
+                    className={`group flex w-full justify-between gap-x-1 bg-white-100 p-1 text-dark-900 duration-300 hover:bg-white-200  hover:text-dark-900 dark:bg-dark-800 dark:hover:bg-dark-700 dark:hover:text-white-200 ${
                       active === button.key &&
                       "bg-white-200 text-white-100 dark:bg-dark-700 dark:text-white-100"
                     }`}

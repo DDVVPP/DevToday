@@ -26,16 +26,24 @@ const MeetupTag = ({
   const month = formattedDate.slice(0, 3);
   const day = formattedDate.slice(4);
   return (
-    <MotionDiv whileHover={{ scale: 1.1 }}>
-      <section className="flex w-full gap-x-[14px]">
-        <div className="flex h-[66px] min-w-[42px] flex-col items-center justify-center rounded-[6px] text-dark-700 dark:bg-dark-700 dark:text-white-300">
+    <MotionDiv
+      whileHover={{
+        scale: 1.03,
+      }}
+      transition={{
+        duration: 0.2,
+        ease: "linear",
+      }}
+    >
+      <section className="group flex w-full gap-x-[14px] rounded-[6px] p-1 hover:bg-white-200 dark:hover:bg-dark-700">
+        <div className="flex h-[66px] min-w-[42px] flex-col items-center justify-center rounded-[6px] text-dark-700 group-hover:bg-white-100 dark:bg-dark-700 dark:text-white-300 group-hover:dark:bg-dark-800">
           <div className="paragraph-4-regular uppercase">{month}</div>
           <span className="display-2-bold text-primary-500">{day}</span>
         </div>
 
         <div className="flex flex-col">
           <div className="flex flex-col gap-y-[2px]">
-            <span className="paragraph-3-medium line-clamp-1 dark:bg-dark-800 dark:text-white-100 ">
+            <span className="paragraph-3-medium line-clamp-1">
               {meetupTitle}
             </span>
             <div className="subtitle-regular flex items-center gap-x-[6px] dark:text-white-400">
@@ -52,7 +60,7 @@ const MeetupTag = ({
           <div className="mt-[10px] flex w-full gap-x-1">
             {meetupTags.map((tag, idx) => (
               <div
-                className="caption-8 rounded-[20px] bg-white-200 px-[10px] py-[4px] uppercase text-white-400  dark:bg-dark-700 dark:text-white-300"
+                className="caption-8 rounded-[20px] bg-white-200 px-[10px] py-[4px] uppercase text-white-400  group-hover:bg-white-100 dark:bg-dark-700 dark:text-white-300 group-hover:dark:bg-dark-800"
                 key={idx}
               >
                 {tag}

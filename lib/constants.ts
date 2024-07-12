@@ -46,6 +46,11 @@ export const createMenuItems = [
     key: "podcast",
     route: "/podcasts/create-podcast",
   },
+  {
+    label: "Create Group",
+    key: "group",
+    route: "/groups/create-group",
+  },
 ];
 export const onboardingOptions: OnboardingOptions = {
   step: {
