@@ -8,8 +8,6 @@ import { getDynamicPodcasts } from "@/lib/actions/podcast.actions";
 import PodcastCard from "../profile/posts/PodcastCard";
 import { getDynamicGroups } from "@/lib/actions/group.actions";
 import GroupCard from "../profile/posts/GroupCard";
-import { Button } from "../ui/button";
-import Link from "next/link";
 
 interface HomeContentProps {
   type: "meetups" | "posts" | "podcasts" | "groups";
