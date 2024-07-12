@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import {
   Popover,
@@ -21,15 +21,24 @@ import {
 const CreateButton = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const router = useRouter();
+  const [isClient, setIsClient] = useState(false); // To prevent hydration error
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <TooltipProvider delayDuration={0}>
       <Tooltip>
         <Popover key={"menuPopover" + isMobile}>
-          <TooltipTrigger>
-            <PopoverTrigger className="group rounded-md p-3 duration-300 hover:bg-primary-500">
-              <Plus className="fill-white-400 duration-300 group-hover:fill-white-100 dark:fill-white-300" />
-            </PopoverTrigger>
-          </TooltipTrigger>
+          {isClient && (
+            <TooltipTrigger>
+              <PopoverTrigger className="group rounded-md p-3 duration-300 hover:bg-primary-500">
+                <Plus className="fill-white-400 duration-300 group-hover:fill-white-100 dark:fill-white-300" />
+              </PopoverTrigger>
+            </TooltipTrigger>
+          )}
+
           <TooltipContent
             className="caption-10 border border-white-border text-dark-700 dark:border-dark-800 dark:bg-dark-700 dark:text-white-100"
             align="center"
