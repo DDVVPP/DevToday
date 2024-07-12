@@ -27,7 +27,7 @@ const SidebarFilter = ({ className }: { className?: string }) => {
         <div className="paragraph-2-bold mb-1 flex justify-start bg-white-100 pl-3 text-dark-900 max-lg:hidden dark:bg-dark-800 dark:text-white-200">
           <span>Sort & Filter</span>
         </div>
-        <div className="flex w-full flex-col justify-start gap-x-1 gap-y-2.5 py-1 max-lg:flex-row max-lg:justify-around max-lg:p-0 lg:pr-5">
+        <div className="flex w-full flex-col justify-start gap-x-1 gap-y-2.5 py-1 max-lg:flex-row max-lg:justify-center max-lg:p-0 lg:pr-5">
           {pathname === "/groups"
             ? groupSidebarButtons.map((button) => (
                 <div
@@ -58,7 +58,7 @@ const SidebarFilter = ({ className }: { className?: string }) => {
                   key={button.key}
                   className={`w-full rounded-md px-2  ${
                     active === button.key &&
-                    "items-center  rounded-md bg-white-200 text-white-100 dark:bg-dark-700 dark:text-white-100"
+                    "items-center rounded-md bg-white-200 text-white-100 dark:bg-dark-700 dark:text-white-100"
                   }`}
                 >
                   <SidebarButton

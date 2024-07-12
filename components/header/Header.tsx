@@ -36,7 +36,7 @@ const Header = async () => {
               href="/sign-in"
               className="rounded bg-white-200 hover:bg-primary-500 dark:bg-dark-700"
             >
-              <p className="paragraph-2-medium p-3 text-dark-700 hover:text-white-100 dark:text-white-300">
+              <p className="paragraph-2-medium text-nowrap p-3 text-dark-700 hover:text-white-100 dark:text-white-300">
                 Sign In
               </p>
             </Link>
