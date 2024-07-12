@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import {
   Popover,
@@ -51,16 +51,15 @@ const CreateButton = () => {
           >
             <div className="mx-1 flex flex-col gap-y-1">
               {createMenuItems.map((item) => (
-                <>
+                <Fragment key={item.key}>
                   <Button
-                    key={item.key}
                     onClick={() => router.push(item.route)}
                     className="paragraph-3-medium align-self-start flex w-full content-start items-center justify-start gap-x-1 rounded-md bg-white-100 align-middle text-dark-900 ring-0 hover:bg-primary-100 dark:bg-dark-800  dark:text-white-200 dark:hover:bg-primary-500"
                   >
                     <ThinPlus className="size-4 self-center" />
                     <span>{item.label}</span>
                   </Button>
-                </>
+                </Fragment>
               ))}
             </div>
           </PopoverContent>
