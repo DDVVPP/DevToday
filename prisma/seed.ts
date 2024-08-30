@@ -18,6 +18,19 @@ async function main() {
   const meetupIds = [];
   const podcastIds = [];
   const groupIds = [];
+
+  const groupNouns = [
+    "Sphere",
+    "Guild",
+    "Circle",
+    "Forum",
+    "Alliance",
+    "Network",
+    "Collective",
+    "Community",
+    "Assembly",
+    "Crew",
+  ];
   const techTerms = [
     "AI",
     "Blockchain",
@@ -104,6 +117,14 @@ async function main() {
     "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
   ];
 
+  const capitalizeTitle = (title: string): string => {
+    return title
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
   // USERS
   for (let i = 0; i < 20; i++) {
     const firstName = faker.person.firstName();
@@ -133,27 +154,51 @@ async function main() {
     userIds.push(user.id);
   }
 
+  // DEMO USER
+  const demoUserSocialMedia = platformArray.map((platform) => ({
+    platform,
+    handle: faker.internet.userName(),
+    link: faker.internet.url(),
+  }));
+  const demoUser = await prisma.user.create({
+    data: {
+      email: "demouser@Email.com",
+      firstName: "Demo",
+      lastName: "User",
+      username: "demouser",
+      level: Levels.LearningEnthusiast,
+      bio: `Passionate developer with a keen interest in emerging technologies and open-source projects. I love exploring innovative solutions and sharing insights with the tech community. Always eager to collaborate on new ideas and help others grow in their coding journey. Let's build something amazing together!`,
+      image: faker.image.urlLoremFlickr({ category: "avatar" }),
+      goal: faker.helpers.enumValue(Goals),
+      tech: faker.helpers.arrayElements(techArray),
+      SocialMedia: {
+        create: demoUserSocialMedia, // Creating social media entries
+      },
+    },
+  });
+  userIds.push(demoUser.id);
+
   // GROUPS
   for (let i = 0; i < 20; i++) {
     const adminsConnect = faker.helpers
-      .arrayElements(userIds)
+      .arrayElements(userIds, { unique: true })
       .map((userId: number) => {
         return { id: userId };
       });
     const membersConnect = faker.helpers
-      .arrayElements(userIds)
+      .arrayElements(userIds, { unique: true })
       .map((userId: number) => {
         return { id: userId };
       });
 
     const group = await prisma.group.create({
       data: {
-        name: faker.commerce.department() + " Enthusiasts",
-        about: `Welcome to the ${faker.commerce.department()} Enthusiasts group! In this community, we dive into various topics such as ${faker.helpers.arrayElement(techTerms)}. We’re here to explore ${faker.helpers.arrayElement(techTrends)} and stay updated on the latest tech developments.
+        name: `${faker.commerce.department()} ${faker.helpers.arrayElement(groupNouns)}`,
+        about: `Welcome to the ${faker.commerce.department()} ${faker.helpers.arrayElement(groupNouns)}! In this community, we dive into various topics such as ${faker.helpers.arrayElement(techTerms)}. We’re here to explore ${faker.helpers.arrayElement(techTrends)} and stay updated on the latest tech developments.
 
         Join us to connect with like-minded individuals, share your knowledge, and collaborate on exciting projects. Whether you’re passionate about ${faker.helpers.arrayElement(techTerms)} or eager to learn more, there’s a place for you here.`,
-        coverImage: faker.image.urlLoremFlickr({ category: "business" }),
-        profileImage: faker.image.avatar(),
+        coverImage: faker.image.urlLoremFlickr({ category: "education" }),
+        profileImage: faker.image.urlLoremFlickr({ category: "avatar" }),
         admins: {
           connect: adminsConnect,
         },
@@ -170,12 +215,32 @@ async function main() {
     groupIds.push(group.id);
   }
 
+  // UPDATE DEMO USER WITH GROUPS
+  // Find existing groups for the demo user
+  const existingUser = await prisma.user.findUnique({
+    where: { id: demoUser.id },
+    include: { groups: true }, // Include the related groups
+  });
+  const existingGroups = existingUser.groups ?? [];
+
+  // Update the demo user to connect to new groups if they have no existing groups
+  await prisma.user.update({
+    where: { id: demoUser.id },
+    data: {
+      ...(existingGroups.length === 0 && {
+        groups: {
+          connect: groupIds.slice(0, 3).map((groupId) => ({ id: groupId })),
+        },
+      }),
+    },
+  });
+
   // POSTS
   for (let i = 0; i < 50; i++) {
     const tags = faker.helpers.arrayElements(techTags, 3);
     const post = await prisma.post.create({
       data: {
-        title: `${faker.hacker.adjective()} ${faker.hacker.noun()}: ${faker.hacker.phrase()}`,
+        title: `${faker.hacker.phrase({ min: 3, max: 10 })}`,
         body: `In the rapidly evolving field of web development, staying ahead of the curve is crucial. This post explores key trends and best practices in web development, including the latest advancements in ${faker.commerce.department()} frameworks and tools.
 
         We dive into how emerging technologies such as ${faker.company.buzzAdjective()} API integrations and ${faker.commerce.product()} optimization are transforming the development landscape. Learn about ${faker.commerce.product()} performance enhancements and the role of ${faker.commerce.department()} in creating responsive and scalable applications.
@@ -220,7 +285,9 @@ async function main() {
 
     const meetup = await prisma.meetup.create({
       data: {
-        title: `${faker.hacker.noun()} ${faker.hacker.verb()} ${faker.hacker.adjective()}`,
+        title: capitalizeTitle(
+          `${faker.hacker.noun()} ${faker.hacker.verb()} ${faker.hacker.adjective()}`
+        ),
         body: `Join us for an exciting meetup on ${faker.hacker.noun()} where we'll dive into ${faker.hacker.adjective()} topics like ${faker.hacker.verb()} and ${faker.hacker.noun()}. This event is perfect for ${faker.hacker.adjective()} professionals and enthusiasts looking to expand their knowledge and network with others in the field.
 
         Our session will cover various aspects of ${faker.hacker.noun()} development, including practical ${faker.hacker.verb()} techniques and the latest ${faker.hacker.adjective()} trends. Don't miss out on this opportunity to engage with industry experts and fellow participants.
@@ -255,7 +322,7 @@ async function main() {
     const tags = faker.helpers.arrayElements(techTags, 3);
     const podcast = await prisma.podcast.create({
       data: {
-        title: `${faker.hacker.adjective()} ${faker.hacker.noun()}: ${faker.hacker.verb()} in Tech`,
+        title: `${faker.hacker.phrase()}`,
         body: `In this episode, we explore ${faker.hacker.adjective()} ${faker.hacker.noun()} and discuss ${faker.hacker.verb()} strategies in the ${faker.hacker.adjective()} tech world. We'll cover ${faker.hacker.noun()} development, ${faker.hacker.adjective()} trends, and practical ${faker.hacker.verb()} tips. Join us for expert opinions on how ${faker.hacker.noun()} is shaping the tech landscape.
 
         This podcast features ${faker.hacker.adjective()} insights, ${faker.hacker.noun()} interviews, and hands-on advice to help you stay ahead in the ${faker.hacker.noun()} field. Don't miss out on expanding your ${faker.hacker.noun()} knowledge.
