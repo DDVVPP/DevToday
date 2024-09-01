@@ -108,7 +108,7 @@ export default function RootLayout({
     >
       <html lang="en" suppressHydrationWarning>
         <body className={plex.className}>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
           <Toaster position="bottom-right" />
         </body>
       </html>
