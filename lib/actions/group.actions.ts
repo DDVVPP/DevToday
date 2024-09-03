@@ -97,7 +97,6 @@ export async function deleteGroup(id: number) {
         id,
       },
     });
-    console.log("group", group);
     return group;
   } catch (error) {
     console.error("Error deleting group:", error);

@@ -19,7 +19,7 @@ const ProfileContent = ({
   content: UserWithProfileContent;
 }) => {
   const [tabValue, setTabValue] = React.useState<string>("posts");
-  console.log(content);
+
   return (
     <>
       <Tabs
