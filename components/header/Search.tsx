@@ -58,7 +58,7 @@ const Search = () => {
     <>
       {/* SearchIcon in the Header */}
       <div
-        className="bg-white-200 duration-300 group-hover:bg-primary-500 dark:bg-dark-700"
+        className="group cursor-pointer rounded-md bg-white-200 p-3 duration-300 hover:bg-primary-500 dark:bg-dark-700"
         onClick={() => setOpen((open) => !open)}
       >
         <SearchIcon className="fill-white-400 duration-300 group-hover:fill-white-100 dark:fill-white-300" />

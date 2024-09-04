@@ -24,20 +24,21 @@ const HeaderNav = () => {
           <TooltipProvider key={key} delayDuration={0}>
             <Tooltip>
               <TooltipTrigger>
-                <div
-                  className={
-                    isSelected
-                      ? "rounded-md bg-primary-500 p-3"
-                      : "group rounded-md p-3 duration-300  hover:bg-primary-500"
-                  }
-                >
-                  <Link href={`/${key}`}>
+                {/* Added a prefetch=false in order to adjust for lag in loading the loading state */}
+                <Link href={`/${key}`} prefetch={false}>
+                  <div
+                    className={
+                      isSelected
+                        ? "rounded-md bg-primary-500 p-3"
+                        : "group rounded-md p-3 duration-300  hover:bg-primary-500"
+                    }
+                  >
                     <Icon
                       key={key}
                       className={`duration-300 group-hover:fill-white-100 ${isSelected ? "fill-white-100" : "fill-white-400 dark:fill-white-300"}`}
                     />
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               </TooltipTrigger>
               <TooltipContent
                 className="caption-10 border border-white-border text-dark-700 dark:border-dark-800 dark:bg-dark-700 dark:text-white-100"

@@ -23,10 +23,7 @@ const Header = async () => {
         </section>
 
         <section className="flex items-center gap-x-4">
-          <div className="group cursor-pointer rounded-md bg-white-200 p-3 duration-300 hover:bg-primary-500 dark:bg-dark-700">
-            <Search />
-          </div>
-
+          <Search />
           <NotificationsMenu userId={user?.id ?? ""} />
 
           {user ? (
