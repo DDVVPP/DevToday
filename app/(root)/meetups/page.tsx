@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 
 import HomeContent from "@/components/home/HomeContent";
 import SharedSidebars from "@/components/layout/SharedSidebars";
+import Loader from "@/components/shared/Loader";
 
 const Home = async ({
   searchParams,
@@ -16,7 +17,7 @@ const Home = async ({
     <SharedSidebars contentType={type} filter={filter} page={page}>
       <Suspense
         key={JSON.stringify(searchParams)}
-        fallback={<div>Loading...</div>}
+        fallback={<Loader content="meetups" />}
       >
         <HomeContent query={filter} currentPage={page} type={type} />
       </Suspense>
