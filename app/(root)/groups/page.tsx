@@ -1,8 +1,6 @@
 import HomeContent from "@/components/home/HomeContent";
 import SharedSidebars from "@/components/layout/SharedSidebars";
 
-import React, { Suspense } from "react";
-
 const Home = async ({
   searchParams,
 }: {
@@ -14,12 +12,7 @@ const Home = async ({
 
   return (
     <SharedSidebars contentType="groups" page={page} filter={filter!}>
-      <Suspense
-        key={JSON.stringify(searchParams)}
-        fallback={<div>Loading...</div>}
-      >
-        <HomeContent query={filter} currentPage={page} type="groups" />
-      </Suspense>
+      <HomeContent query={filter} currentPage={page} type="groups" />
     </SharedSidebars>
   );
 };
