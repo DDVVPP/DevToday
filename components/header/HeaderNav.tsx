@@ -24,8 +24,7 @@ const HeaderNav = () => {
           <TooltipProvider key={key} delayDuration={0}>
             <Tooltip>
               <TooltipTrigger>
-                {/* Added a prefetch=false in order to adjust for lag in loading the loading state */}
-                <Link href={`/${key}`} prefetch={false}>
+                <Link href={`/${key}`}>
                   <div
                     className={
                       isSelected
