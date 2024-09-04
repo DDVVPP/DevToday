@@ -53,8 +53,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/[username]/GitNote.git
-cd GitNote
+git clone https://github.com/[username]/DevToday.git
+cd DevToday
 ```
 
 **Installation**
