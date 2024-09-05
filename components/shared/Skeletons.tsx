@@ -164,25 +164,27 @@ export const GroupSearchMenuSkeleton = () => {
 
 export const HomePostsAndMeetupsSkeleton = () => {
   return (
-    <Skeleton className="mx-10 my-5 flex size-full h-[850px] gap-x-4 dark:bg-transparent">
-      <div className="flex w-[325px] flex-col gap-y-5">
+    <Skeleton className="mx-10 my-5 flex size-full h-[850px] gap-x-4 bg-transparent max-lg:h-svh max-lg:flex-col">
+      <div className="flex w-[325px] flex-col gap-y-5 max-lg:hidden">
         <div className="flex w-full rounded-2xl bg-white-100 lg:h-1/4 dark:bg-dark-800"></div>
         <div className="flex w-full rounded-2xl bg-white-100 lg:h-2/4  dark:bg-dark-800"></div>
         <div className="flex w-full rounded-2xl bg-white-100 lg:h-2/4  dark:bg-dark-800"></div>
       </div>
 
-      <div className="flex w-full flex-col gap-y-5">
+      <div className="mb-5 flex h-10 w-full rounded-2xl bg-white-100 p-5 lg:hidden dark:bg-dark-800"></div>
+
+      <div className="flex w-full flex-col gap-y-5 max-lg:justify-between">
         {[...Array(4)].map((_, idx) => {
           return (
             <div
               key={idx}
-              className="flex w-full rounded-2xl bg-white-100 lg:h-1/4 lg:w-full dark:bg-dark-800"
+              className="flex w-full rounded-2xl bg-white-100 max-lg:h-[200px] lg:h-1/4 lg:w-full dark:bg-dark-800"
             ></div>
           );
         })}
       </div>
 
-      <div className="flex w-[550px] flex-col gap-y-5">
+      <div className="flex w-[550px] flex-col gap-y-5 max-[1340px]:hidden">
         <div className="flex w-full rounded-2xl bg-white-100 lg:h-2/3 lg:w-full dark:bg-dark-800"></div>
         <div className="flex w-full rounded-2xl bg-white-100 lg:h-1/3 lg:w-full dark:bg-dark-800"></div>
       </div>
@@ -192,38 +194,40 @@ export const HomePostsAndMeetupsSkeleton = () => {
 
 export const HomePodcastsAndGroupsSkeleton = () => {
   return (
-    <Skeleton className="mx-10 my-5 flex size-full h-[850px] gap-x-4 bg-transparent">
-      <div className="flex w-[325px] flex-col gap-y-5">
+    <Skeleton className="mx-10 my-5 flex size-full h-[850px] gap-x-4 bg-transparent max-lg:h-svh max-lg:flex-col">
+      <div className="flex w-[325px] flex-col gap-y-5 max-lg:hidden">
         <div className="flex w-full rounded-2xl bg-white-100 lg:h-1/4 dark:bg-dark-800"></div>
         <div className="flex w-full rounded-2xl bg-white-100 lg:h-2/4  dark:bg-dark-800"></div>
         <div className="flex w-full rounded-2xl bg-white-100 lg:h-2/4  dark:bg-dark-800"></div>
       </div>
 
-      <div className="flex w-full gap-x-5">
-        <div className="flex h-full w-1/2 flex-col gap-y-5">
+      <div className="mb-5 flex h-10 w-full rounded-2xl bg-white-100 p-5 lg:hidden dark:bg-dark-800"></div>
+
+      <div className="flex w-full  max-lg:flex-col max-lg:justify-between max-lg:gap-y-5 lg:gap-x-5">
+        <div className="flex  h-full flex-col  gap-y-5  max-lg:justify-between lg:w-1/2">
           {[...Array(3)].map((_, idx) => {
             return (
               <div
                 key={idx}
-                className="flex w-full rounded-2xl bg-white-100 lg:h-1/3 lg:w-full dark:bg-dark-800"
+                className="flex w-full rounded-2xl bg-white-100 max-lg:h-[250px] lg:h-1/3 lg:w-full dark:bg-dark-800"
               ></div>
             );
           })}
         </div>
 
-        <div className="flex h-full w-1/2 flex-col gap-y-5">
+        <div className="flex  h-full flex-col  gap-y-5 max-lg:justify-between lg:w-1/2">
           {[...Array(3)].map((_, idx) => {
             return (
               <div
                 key={idx}
-                className="flex w-full rounded-2xl bg-white-100 lg:h-1/3 lg:w-full dark:bg-dark-800"
+                className="flex w-full rounded-2xl bg-white-100 max-lg:h-[250px] lg:h-1/3 lg:w-full dark:bg-dark-800"
               ></div>
             );
           })}
         </div>
       </div>
 
-      <div className="flex w-[550px] flex-col gap-y-5">
+      <div className="flex w-[550px] flex-col gap-y-5 max-[1340px]:hidden">
         <div className="flex w-full rounded-2xl bg-white-100 lg:h-3/5 lg:w-full dark:bg-dark-800"></div>
         <div className="flex w-full rounded-2xl bg-white-100 lg:h-2/5 lg:w-full dark:bg-dark-800"></div>
       </div>
