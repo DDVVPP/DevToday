@@ -10,6 +10,7 @@ const Home = async ({
     (searchParams.filter as "newest" | "popular" | "following") || "newest";
   const page = Number(searchParams.page) || 1;
   const type = "podcasts";
+
   return (
     <SharedSidebars contentType={type} filter={filter} page={page}>
       <HomeContent query={filter} currentPage={page} type="podcasts" />

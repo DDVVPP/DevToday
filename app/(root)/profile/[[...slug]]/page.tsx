@@ -1,13 +1,12 @@
-import EditProfile from "@/components/profile/EditProfile";
-import ProfileContent from "@/components/profile/ProfileContent";
+import { auth } from "@clerk/nextjs/server";
 
 import {
   getUser,
   getUserById,
   getUserWithContent,
 } from "@/lib/actions/user.actions";
-import { auth } from "@clerk/nextjs/server";
-import React from "react";
+import EditProfile from "@/components/profile/EditProfile";
+import ProfileContent from "@/components/profile/ProfileContent";
 
 const Profile = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
