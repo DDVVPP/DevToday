@@ -1,5 +1,5 @@
-import { HomePostsAndMeetupsSkeleton } from "@/components/shared/Skeletons";
+import { HomeRoutesSkeleton } from "@/components/shared/Skeletons";
 
-const Loading = () => <HomePostsAndMeetupsSkeleton />;
+const Loading = () => <HomeRoutesSkeleton type="posts" />;
 
 export default Loading;
