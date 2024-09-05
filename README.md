@@ -10,7 +10,7 @@
 
 DevToday Version 2 - A content creation platform for developers which offers a feed of dev news, podcasts, and events, keeping you up-to-date with the latest tech. It has interactive features like podcast audio playback, meetup maps, and more. Developed as part of the JSM Masterclass, DevToday can be thought of as the go-to developer community hub.
 
-<a href="https://dev-today-v2.vercel.app/" target="_blank">Deployed Site</a>\
+[Deployed Site](https://dev-today-v2.vercel.app/)\
 *Please contact me for Demo User credentials if you would like to use an existing account
 
 ## <a name="tech-stack">Tech Stack</a>
@@ -99,6 +99,6 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
 ## <a name="version-one">Version 1 of DevToday</a>
-Teammate: [Adam Gordon](https://www.linkedin.com/in/adam-gordon119/)
-
-Deployed Site: [DevToday](https://capstone-darshin-adam.vercel.app/)
+Teammate LinkedIn: [Adam Gordon](https://www.linkedin.com/in/adam-gordon119/)\
+v1.0 Deployed Site: [https://capstone-darshin-adam.vercel.app/](https://capstone-darshin-adam.vercel.app/)\
+*Please contact me for Demo User credentials if you would like to use an existing account
