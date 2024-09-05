@@ -8,10 +8,15 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Loader2 } from "lucide-react";
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { NotificationWithActionByAndPost } from "../../lib/types.d";
 import { Bell } from "../ui/icons";
+import { Loader2 } from "lucide-react";
 import MarkReadButton from "./MarkReadButton";
 import { NotificationType } from "@prisma/client";
 import {
@@ -142,36 +147,48 @@ const NotificationsMenu = ({ userId }: { userId: string }) => {
   };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger className="group flex items-center rounded-md bg-white-200 p-3 duration-300 hover:bg-primary-500 dark:bg-dark-700">
-        <Bell
-          className="fill-white-400 duration-300 group-hover:fill-white-100 dark:fill-white-300"
-          status={
-            (notifications?.unreadNotifications ?? []).length > 0
-              ? "newWithBorder"
-              : "none"
-          }
-        />
-      </DropdownMenuTrigger>
+    <TooltipProvider delayDuration={0}>
+      <Tooltip>
+        <DropdownMenu>
+          <TooltipTrigger>
+            <DropdownMenuTrigger className="group flex items-center rounded-md bg-white-200 p-3 duration-300 hover:bg-primary-500 dark:bg-dark-700">
+              <Bell
+                className="fill-white-400 duration-300 group-hover:fill-white-100 dark:fill-white-300"
+                status={
+                  (notifications?.unreadNotifications ?? []).length > 0
+                    ? "newWithBorder"
+                    : "none"
+                }
+              />
+            </DropdownMenuTrigger>
+          </TooltipTrigger>
+          <TooltipContent
+            className="caption-10 border border-white-border text-dark-700 dark:border-dark-800 dark:bg-dark-700 dark:text-white-100"
+            align="center"
+          >
+            Notifications
+          </TooltipContent>
 
-      <DropdownMenuContent
-        className="mt-6 flex w-[385px] flex-col rounded-2xl border border-white-border max-md:w-[347px] dark:border-dark-700 dark:bg-dark-800"
-        align="end"
-      >
-        {isLoadingNotifications ? (
-          <div className="flex h-40 flex-col justify-center gap-x-2 space-y-2 text-center align-middle">
-            <p className="paragraph-3-regular animate-pulse text-white-400 dark:text-white-300">
-              Loading notifications...
-            </p>
-            <div className="flex justify-center">
-              <Loader2 className="animate-spin text-white-400 dark:text-white-300" />
-            </div>
-          </div>
-        ) : (
-          showNotifications()
-        )}
-      </DropdownMenuContent>
-    </DropdownMenu>
+          <DropdownMenuContent
+            className="mt-6 flex w-[385px] flex-col rounded-2xl border border-white-border max-md:w-[347px] dark:border-dark-700 dark:bg-dark-800"
+            align="end"
+          >
+            {isLoadingNotifications ? (
+              <div className="flex h-40 flex-col justify-center gap-x-2 space-y-2 text-center align-middle">
+                <p className="paragraph-3-regular animate-pulse text-white-400 dark:text-white-300">
+                  Loading notifications...
+                </p>
+                <div className="flex justify-center">
+                  <Loader2 className="animate-spin text-white-400 dark:text-white-300" />
+                </div>
+              </div>
+            ) : (
+              showNotifications()
+            )}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </Tooltip>
+    </TooltipProvider>
   );
 };
 

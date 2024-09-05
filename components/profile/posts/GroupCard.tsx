@@ -39,7 +39,7 @@ const GroupCard = ({ group, userCount, profile }: GroupCardProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="group flex h-[330px] break-inside-avoid-column flex-wrap rounded-[16px] bg-white-100 p-5 duration-300 hover:bg-[#e1e2e6] dark:bg-dark-800 dark:hover:bg-dark-700"
+      className="group flex h-[360px] break-inside-avoid-column flex-wrap rounded-[16px] bg-white-100 p-5 duration-300 hover:bg-[#e1e2e6] dark:bg-dark-800 dark:hover:bg-dark-700"
     >
       <Link href={`/groups/${group.id}`}>
         <div className="flex w-full flex-col gap-y-3">

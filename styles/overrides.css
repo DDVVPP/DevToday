@@ -46,6 +46,14 @@
 .tox-collection__item {
   @apply dark:text-white-300 !important;
 }
+.tox-toolbar-overlord {
+  background-color: transparent !important;
+  @apply border-none !important;
+}
+.tox-toolbar {
+  background-color: transparent !important;
+  @apply border-none !important;
+}
 .tox-toolbar__group {
   @apply pl-2 pr-2 border-none !important;
 }
@@ -61,10 +69,7 @@
 .tox-tbtn svg {
   @apply dark:fill-white-300 fill-dark-800 !important;
 }
-.tox-toolbar-overlord {
-  background-color: transparent !important;
-  @apply border-none !important;
-}
+
 .tox-toolbar__primary {
   @apply dark:bg-dark-800 bg-white-100 gap-x-4 flex justify-between !important;
   background-image: none !important;
