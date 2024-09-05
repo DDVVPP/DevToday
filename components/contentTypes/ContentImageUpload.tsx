@@ -64,7 +64,7 @@ const ContentImageUpload = ({
                     className="cursor-default"
                   />
                 ) : (
-                  <p className="paragraph-4-regular cursor-text text-white-400">
+                  <p className="paragraph-4-regular cursor-pointer text-white-400">
                     Drag & Drop or upload png or jpeg up to 16MB
                   </p>
                 )}
