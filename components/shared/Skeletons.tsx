@@ -1,6 +1,7 @@
+import React from "react";
+
 import { Skeleton } from "@/components/ui/skeleton";
 
-import React from "react";
 const ProfileCardSkeleton = () => {
   return (
     <Skeleton className="h-[205px] w-full animate-pulse rounded-[16px] bg-white-300 dark:bg-dark-800">
@@ -158,5 +159,74 @@ export const GroupSearchMenuSkeleton = () => {
         })}
       </div>
     </div>
+  );
+};
+
+export const HomePostsAndMeetupsSkeleton = () => {
+  return (
+    <Skeleton className="mx-10 my-5 flex size-full h-[850px] gap-x-4 dark:bg-transparent">
+      <div className="flex w-[325px] flex-col gap-y-5">
+        <div className="flex w-full rounded-2xl bg-white-100 lg:h-1/4 dark:bg-dark-800"></div>
+        <div className="flex w-full rounded-2xl bg-white-100 lg:h-2/4  dark:bg-dark-800"></div>
+        <div className="flex w-full rounded-2xl bg-white-100 lg:h-2/4  dark:bg-dark-800"></div>
+      </div>
+
+      <div className="flex w-full flex-col gap-y-5">
+        {[...Array(4)].map((_, idx) => {
+          return (
+            <div
+              key={idx}
+              className="flex w-full rounded-2xl bg-white-100 lg:h-1/4 lg:w-full dark:bg-dark-800"
+            ></div>
+          );
+        })}
+      </div>
+
+      <div className="flex w-[550px] flex-col gap-y-5">
+        <div className="flex w-full rounded-2xl bg-white-100 lg:h-2/3 lg:w-full dark:bg-dark-800"></div>
+        <div className="flex w-full rounded-2xl bg-white-100 lg:h-1/3 lg:w-full dark:bg-dark-800"></div>
+      </div>
+    </Skeleton>
+  );
+};
+
+export const HomePodcastsAndGroupsSkeleton = () => {
+  return (
+    <Skeleton className="mx-10 my-5 flex size-full h-[850px] gap-x-4 bg-transparent">
+      <div className="flex w-[325px] flex-col gap-y-5">
+        <div className="flex w-full rounded-2xl bg-white-100 lg:h-1/4 dark:bg-dark-800"></div>
+        <div className="flex w-full rounded-2xl bg-white-100 lg:h-2/4  dark:bg-dark-800"></div>
+        <div className="flex w-full rounded-2xl bg-white-100 lg:h-2/4  dark:bg-dark-800"></div>
+      </div>
+
+      <div className="flex w-full gap-x-5">
+        <div className="flex h-full w-1/2 flex-col gap-y-5">
+          {[...Array(3)].map((_, idx) => {
+            return (
+              <div
+                key={idx}
+                className="flex w-full rounded-2xl bg-white-100 lg:h-1/3 lg:w-full dark:bg-dark-800"
+              ></div>
+            );
+          })}
+        </div>
+
+        <div className="flex h-full w-1/2 flex-col gap-y-5">
+          {[...Array(3)].map((_, idx) => {
+            return (
+              <div
+                key={idx}
+                className="flex w-full rounded-2xl bg-white-100 lg:h-1/3 lg:w-full dark:bg-dark-800"
+              ></div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="flex w-[550px] flex-col gap-y-5">
+        <div className="flex w-full rounded-2xl bg-white-100 lg:h-3/5 lg:w-full dark:bg-dark-800"></div>
+        <div className="flex w-full rounded-2xl bg-white-100 lg:h-2/5 lg:w-full dark:bg-dark-800"></div>
+      </div>
+    </Skeleton>
   );
 };
