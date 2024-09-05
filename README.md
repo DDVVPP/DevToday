@@ -11,6 +11,7 @@
 DevToday Version 2 - A content creation platform for developers which offers a feed of dev news, podcasts, and events, keeping you up-to-date with the latest tech. It has interactive features like podcast audio playback, meetup maps, and more. Developed as part of the JSM Masterclass, DevToday can be thought of as the go-to developer community hub.
 
 Deployed Site - https://dev-today-v2.vercel.app/
+*Please contact me for Demo User credentials
 
 ## <a name="tech-stack">Tech Stack</a>
 
