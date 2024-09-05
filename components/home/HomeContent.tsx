@@ -69,7 +69,7 @@ const HomeContent = async ({
 
       return (
         <div className="flex w-full flex-1 flex-col">
-          <div className="columns-2 space-y-4 max-lg:mt-4 max-lg:columns-1">
+          <div className="columns-2 space-y-4 max-lg:mt-5 max-lg:columns-1">
             {podcasts &&
               podcasts.podcasts.map((podcast, idx) => (
                 <PodcastCard
@@ -94,7 +94,7 @@ const HomeContent = async ({
 
       return (
         <div className="flex  w-full flex-1 flex-col ">
-          <div className="columns-2  gap-x-5 space-y-5 max-md:columns-1">
+          <div className="columns-2 gap-x-5 space-y-5 max-lg:mt-5 max-md:columns-1">
             {groups &&
               groups?.groups?.map((group) => (
                 <GroupCard
