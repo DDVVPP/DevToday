@@ -1,12 +1,11 @@
-## <a name="introduction">Introduction</a>
+# <a name="introduction">DevToday v2.0</a>
 A content creation platform for developers which offers a feed of dev news, podcasts, and events, keeping you up-to-date with the latest tech. It has interactive features like podcast audio playback, meetup maps, and more. Developed as part of the JSM Masterclass, DevToday can be thought of as the go-to developer community hub.
 
 **v2.0 Deployed Site**\
 &nbsp;&nbsp;&nbsp;&nbsp;[https://dev-today-v2.vercel.app/](https://dev-today-v2.vercel.app/)\
 &nbsp;&nbsp;&nbsp;&nbsp;**Please contact me for Demo User credentials if you would like to use an existing account*
 
-## <a name="tech-stack">Tech Stack</a>
-
+## <a name="tech-stack">⚙️ Tech Stack</a>
 - Next.js
 - TypeScript
 - Prism.js
@@ -16,7 +15,7 @@ A content creation platform for developers which offers a feed of dev news, podc
 - Supabase
 - Tailwind CSS
 
-## <a name="features">Key Features</a>
+## <a name="features">☀️ Key Features</a>
 - Clerk authorization for sign-up and login
 - Onboarding
 - Post and podcast feeds
@@ -35,7 +34,7 @@ A content creation platform for developers which offers a feed of dev news, podc
 - Light and Dark modes
 - Use of Git and Github with an Asana board of tickets for efficient team collaboration.
 
-## <a name="quick-start">Quick Start</a>
+## <a name="quick-start">🚀 Quick Start</a>
 
 Follow these steps to set up the project locally on your machine.
 
@@ -87,7 +86,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
-## <a name="version-one">DevToday Version 1</a>
+## <a name="version-one">☎️ DevToday v1.0</a>
 **Teammate's LinkedIn**\
 &nbsp;&nbsp;&nbsp;&nbsp;[Adam Gordon](https://www.linkedin.com/in/adam-gordon119/)
 
