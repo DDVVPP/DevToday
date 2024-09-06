@@ -1,11 +1,3 @@
-## <a name="table">Table of Contents</a>
-
-1. [Introduction](#introduction)
-2. [Tech Stack](#tech-stack)
-3. [Key Features](#features)
-4. [Quick Start](#quick-start)
-5. [Version 1 Details](#version-one)
-
 ## <a name="introduction">Introduction</a>
 A content creation platform for developers which offers a feed of dev news, podcasts, and events, keeping you up-to-date with the latest tech. It has interactive features like podcast audio playback, meetup maps, and more. Developed as part of the JSM Masterclass, DevToday can be thought of as the go-to developer community hub.
 
