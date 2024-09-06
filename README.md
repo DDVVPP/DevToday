@@ -102,6 +102,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
     -  Profile and logout / sign in
   - Notifications
     - Continuous scroll, ordering, mark all as read
+    - Clicking on each type of notification should navigate user to corresponding content
   - CmdK search
 - Post, Meetup, Group Detail Pages
   - Interactive google api map
