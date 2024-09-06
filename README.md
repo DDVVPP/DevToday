@@ -1,7 +1,7 @@
 # <a name="introduction">DevToday v2.0</a>
 A content creation platform for developers which offers a feed of dev news, podcasts, and events, keeping you up-to-date with the latest tech. It has interactive features like podcast audio playback, meetup maps, and more. Developed as part of the JSM Masterclass, DevToday can be thought of as the go-to developer community hub.
 
-**v2.0 Deployed Site**\
+**v2.0 Deployed Site (Work in Progress)**\
 &nbsp;&nbsp;&nbsp;&nbsp;[https://dev-today-v2.vercel.app/](https://dev-today-v2.vercel.app/)\
 &nbsp;&nbsp;&nbsp;&nbsp;**Please contact me for Demo User credentials if you would like to use an existing account*
 
