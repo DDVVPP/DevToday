@@ -132,3 +132,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
     
 - **Mobile Responsiveness** 
   - Ensuring usability and styling consistency across mobile devices for each feature
+
+## <a name="license">📋 License</a>
+Licensed under the MIT License. See [LICENSE](./LICENSE) for more details.
