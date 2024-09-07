@@ -6,14 +6,17 @@ DevToday is a comprehensive platform for developers, providing a curated feed of
 &nbsp;&nbsp;&nbsp;&nbsp;**Please contact me for Demo User credentials if you would like to use an existing account*
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
-- Next.js
-- TypeScript
-- Prism.js
-- TinyMCE
-- PostgreSQL
-- Prisma.io
-- Supabase
-- Tailwind CSS
+- **Next.js** - Framework for building server-side-rendered React applications.
+- **Clerk** - Handles user authentication with secure sign-up, sign-in, and logout functionalities.
+- **PostgreSQL** - Relational database management system.
+- **Prisma.io** - ORM for interacting with the database.
+- **Supabase** - Backend-as-a-Service for database management.
+- **Tailwind CSS** - Utility-first CSS framework for styling.
+- **Shadcn** - Component library for Tailwind CSS.
+- **Framer Motion** - Animation library for React.
+- **TinyMCE** - WYSIWYG HTML editor.
+- **Upload Dropzone** - Library for file uploads.
+- **Google Maps API** - Maps and location services.
 
 ## <a name="features">☀️ Key Features</a>
 - Clerk authorization for sign-up and login
