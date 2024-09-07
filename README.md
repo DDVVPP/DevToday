@@ -39,28 +39,25 @@ DevToday is a comprehensive platform for developers, providing a curated feed of
 Follow these steps to set up the project locally on your machine.
 
 **Prerequisites**\
-Make sure you have the following installed on your machine:
+Ensure you have the following installed:
 
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en)
 - [npm](https://www.npmjs.com/) (Node Package Manager)
 
-**Cloning the Repository**
+**Steps**
+1. Clone the Repo:
 ```bash
 git clone https://github.com/[username]/DevToday.git
 cd DevToday
 ```
 
-**Installation**\
-Install the project dependencies using npm:
-
+2. Install Dependencies
 ```bash
 npm install
 ```
 
-**Set Up Environment Variables**\
-For a few specific applications, we require environment variables. Create .env file in the root of your project.
-
+3. Set Up Environment Variables: Create a `.env` file in the project root:
 ```env
 DATABASE_URL=""
 DIRECT_URL=""
@@ -79,12 +76,13 @@ UPLOADTHING_SECRET=""
 NEXT_PUBLIC_GMAPSKEY=""
 ```
 
-**Running the Project**
+4. Run the Project
 ```bash
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
 
 ## <a name="version-one">☎️ DevToday v1.0</a>
 **Teammate's LinkedIn**\
