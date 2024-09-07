@@ -94,36 +94,41 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 &nbsp;&nbsp;&nbsp;&nbsp;**Please contact me for Demo User credentials if you would like to use an existing account*
 
 **My responsibilities**
-- Header/Footer Navbar
-  - Route setup
-  - Clerk menu
-    -  Light and dark mode control
-    -  Profile and logout / sign in
+- **Header/Footer Navbar** 
+  - Route setup and configuration
+  - Clerk menu integration
+    - Light and dark mode control
+    - Profile management and sign-in/sign-out functionality
   - Notifications
-    - Continuous scroll, ordering, mark all as read
-    - Clicking on each type of notification should navigate user to corresponding content
-  - CmdK search
-- Post, Meetup, Group Detail Pages
-  - Interactive google api map
-  - Edit/delete
+    - Continuous scroll, ordering, and mark all as read features
+    - Navigation to corresponding content for each notification type
+  - CmdK search implementation
+
+- **Post, Meetup, Group Detail Pages** 
+  - Interactive Google Maps API integration
+  - Edit and delete functionalities for posts, meetups, and groups
   - Comments
     - Ordering with animation
-    - Edit, add, delete, like according to role
+    - Edit, add, delete, and like comments based on user role
   - Group
-    - Members tab
-    - Follow and remove users according to role
-    - Top ranked groups and statistical highlights
-    - Joining and leaving
-  - Follow/visit author
-- Post, Meetup, Group Create Pages
-  - Interactive google api map
+    - Members tab display
+    - Follow and remove users based on role
+    - Display of top-ranked groups and statistical highlights
+    - Functionality for joining and leaving groups
+  - Follow and visit author of post or meetup
+    
+- **Post, Meetup, Group Create Pages** 
+  - Interactive Google Maps API integration
   - Zod validation and form generation
-  - Admin and member search
-  - React date/timepicker
-  - TinyMCE code editor
-  - Upload Dropzone
-- Initial schema setup
-- All db CRUD actions associated with each feature
-- Seed file
-  - Faker.js 
-- Mobile responsiveness and styling in each feature
+  - Admin and member search functionalities
+  - React DatePicker integration
+  - TinyMCE code editor implementation
+  - Upload Dropzone integration
+    
+- **Database and Schema Management**
+  - Creation and configuration of initial database schema
+  - Implementation of create, read, update, and delete actions for each feature
+  - Use of Faker.js for generating seed data
+    
+- **Mobile Responsiveness** 
+  - Ensuring usability and styling consistency across mobile devices for each feature
