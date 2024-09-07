@@ -2,8 +2,8 @@
 DevToday is a comprehensive platform for developers, providing a curated feed of tech news, podcasts, and events. Developed as part of the JSM Masterclass, this personal project serves as a comprehensive developer community hub with interactive features such as podcast playback and maps for meetup maps.
 
 **v2.0 Deployed Site (Work in Progress)**\
-&nbsp;&nbsp;&nbsp;&nbsp;[https://dev-today-v2.vercel.app/](https://dev-today-v2.vercel.app/)\
-&nbsp;&nbsp;&nbsp;&nbsp;**Please contact me for Demo User credentials if you would like to use an existing account*
+&nbsp;&nbsp;&nbsp;&nbsp;[Live Demo](https://dev-today-v2.vercel.app/)\
+&nbsp;&nbsp;&nbsp;&nbsp;**Contact me for demo credentials to explore an existing account.*
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 - **Next.js** - Framework for building server-side-rendered React applications.
