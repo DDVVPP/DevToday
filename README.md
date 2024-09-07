@@ -86,12 +86,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 
 ## <a name="version-one">☎️ DevToday v1.0</a>
-**Teammate's LinkedIn**\
-&nbsp;&nbsp;&nbsp;&nbsp;[Adam Gordon](https://www.linkedin.com/in/adam-gordon119/)
+**Teammate's GitHub**\
+&nbsp;&nbsp;&nbsp;&nbsp;[Adam Gordon](https://github.com/adamgordonny)
 
 **v1.0 Deployed Site**\
-&nbsp;&nbsp;&nbsp;&nbsp;[https://capstone-darshin-adam.vercel.app/](https://capstone-darshin-adam.vercel.app/)\
-&nbsp;&nbsp;&nbsp;&nbsp;**Please contact me for Demo User credentials if you would like to use an existing account*
+&nbsp;&nbsp;&nbsp;&nbsp;[Live Demo](https://capstone-darshin-adam.vercel.app/)\
+&nbsp;&nbsp;&nbsp;&nbsp;**Contact me for demo credentials to explore an existing account.*
 
 **My responsibilities**
 - **Header/Footer Navbar** 
