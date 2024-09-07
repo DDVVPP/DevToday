@@ -14,29 +14,27 @@ DevToday is a comprehensive platform for developers, providing a curated feed of
 - **Tailwind CSS** - Utility-first CSS framework for styling.
 - **Shadcn** - Component library for Tailwind CSS.
 - **Framer Motion** - Animation library for React.
+- **React DatePicker** - Flexible date and time picker component for React applications.
 - **TinyMCE** - WYSIWYG HTML editor.
 - **Upload Dropzone** - Library for file uploads.
 - **Google Maps API** - Maps and location services.
 
 ## <a name="features">☀️ Key Features</a>
-- Clerk authorization for sign-up and login
-- Onboarding
-- Post and podcast feeds
-- List of groups and meetups
-- Users with profiles
-- User specific actions such as:
-  - Following other users
-  - Liking posts, podcasts, and comments
-  - Commenting on posts, meetups, podcasts
-  - Editing, creating, and deleting posts, groups, meetups, podcasts, and comments
-  - Joining and leaving groups
-  - Editing profile details
-- CmdK fuzzy search
-- Notifications
-- Mobile Responsiveness
-- Light and Dark modes
-- Use of Git and Github with an Asana board of tickets for efficient team collaboration.
-
+- **Authentication** – Clerk auth for secure sign-up, sign-in, and logout functionalities.
+- **Onboarding** – Provides an introduction and walkthrough for new users.
+- **Interactive Feeds** – Displays posts, podcasts, and group feeds.
+- **Meetups List** – Lists upcoming meetups.
+- **Profile Management** – Manage user profiles, follow other users, and update profile details.
+- **Interactions** – Like posts, podcasts, and comments.
+- **Comments** – Comment on posts, meetups, and podcasts.
+- **Content Management** – Edit, create, and delete posts, groups, meetups, podcasts, and comments.
+- **Group Membership** – Join and leave groups.
+- **Search** – CmdK search provides fuzzy search functionality.
+- **Notifications** – Provides real-time updates with features for marking notifications as read and infinite scrolling.
+- **Mobile Responsiveness** – Ensures usability on mobile devices.
+- **Light and Dark Modes** – Supports both themes.
+- **Version Control and Project Management** – Integrated with Git, GitHub, and Asana for efficient team collaboration.
+  
 ## <a name="quick-start">🚀 Quick Start</a>
 
 Follow these steps to set up the project locally on your machine.
