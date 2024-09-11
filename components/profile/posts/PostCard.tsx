@@ -86,7 +86,7 @@ const PostCard = ({ post, userData, index = 1 }: PostCardProps) => {
                 <Link
                   href={`/profile/${userData?.id}`}
                   className="w-fit"
-                  onClick={(event) => event.stopPropagation()}
+                  onClick={(event) => event.stopPropagation()} // prevents click from bubbling up into parent div
                 >
                   <UserSection
                     image={userData?.image!}
