@@ -26,6 +26,11 @@ const Search = () => {
   const [open, setOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [content, setContent] = useState<ContentItemType[]>();
+  const [isClient, setIsClient] = useState(false); // To prevent hydration error
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // Toggle the menu when ⌘K is pressed
   useEffect(() => {
@@ -63,14 +68,16 @@ const Search = () => {
       {/* SearchIcon in the Header */}
       <TooltipProvider delayDuration={0}>
         <Tooltip>
-          <TooltipTrigger>
-            <div
-              className="group cursor-pointer rounded-md bg-white-200 p-3 duration-300 hover:bg-primary-500 dark:bg-dark-700"
-              onClick={() => setOpen((open) => !open)}
-            >
-              <SearchIcon className="fill-white-400 duration-300 group-hover:fill-white-100 dark:fill-white-300" />
-            </div>
-          </TooltipTrigger>
+          {isClient && (
+            <TooltipTrigger>
+              <div
+                className="group cursor-pointer rounded-md bg-white-200 p-3 duration-300 hover:bg-primary-500 dark:bg-dark-700"
+                onClick={() => setOpen((open) => !open)}
+              >
+                <SearchIcon className="fill-white-400 duration-300 group-hover:fill-white-100 dark:fill-white-300" />
+              </div>
+            </TooltipTrigger>
+          )}
           <TooltipContent
             className="caption-10 border border-white-border text-dark-700 dark:border-dark-800 dark:bg-dark-700 dark:text-white-100"
             align="center"
