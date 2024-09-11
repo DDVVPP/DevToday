@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 import ContentTags from "./ContentTags";
@@ -7,6 +8,7 @@ import LikeButton from "@/components/shared/LikeButton";
 import UserSection from "./UserSection";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import MotionDiv from "@/components/shared/MotionDiv";
 
 interface PostCardProps {
@@ -18,6 +20,8 @@ interface PostCardProps {
 }
 
 const PostCard = ({ post, userData, index = 1 }: PostCardProps) => {
+  const router = useRouter();
+
   return (
     post && (
       <MotionDiv
@@ -31,7 +35,7 @@ const PostCard = ({ post, userData, index = 1 }: PostCardProps) => {
         <div
           className={`group/contentcard min-h-[200px] cursor-pointer gap-x-5 gap-y-2.5 rounded-[16px] bg-white-100 p-5 text-dark-800 duration-300 hover:bg-[#e1e2e6] dark:bg-dark-800 dark:text-white-100 dark:hover:bg-dark-700`}
         >
-          <Link href={`/posts/${post.id}`}>
+          <div id="post" onClick={() => router.push(`/posts/${post.id}`)}>
             <div className="min-size-[50px] float-left">
               {post.image ? (
                 <Image
@@ -78,7 +82,12 @@ const PostCard = ({ post, userData, index = 1 }: PostCardProps) => {
               </div>
               {/* user and aggregates */}
               <div className="my-1 flex w-full justify-between gap-x-3 gap-y-2 align-bottom max-xl:my-0 max-xl:w-full max-xl:flex-col max-lg:flex-col lg:ml-3">
-                <Link href={`/profile/${userData?.id}`} className="w-fit">
+                {/* Used div with onClick instead of Link to fix hydration error - using a button requires an outer div for styling - added an id for screen readers */}
+                <Link
+                  href={`/profile/${userData?.id}`}
+                  className="w-fit"
+                  onClick={(event) => event.stopPropagation()}
+                >
                   <UserSection
                     image={userData?.image!}
                     username={userData?.username!}
@@ -94,7 +103,7 @@ const PostCard = ({ post, userData, index = 1 }: PostCardProps) => {
                 </div>
               </div>
             </section>
-          </Link>
+          </div>
         </div>
       </MotionDiv>
     )
