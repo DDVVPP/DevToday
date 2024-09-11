@@ -1,5 +1,5 @@
 "use client";
-
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -14,6 +14,11 @@ import {
 
 const HeaderNav = () => {
   const pathname = usePathname();
+  const [isClient, setIsClient] = useState(false); // To prevent hydration error
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <>
@@ -23,22 +28,24 @@ const HeaderNav = () => {
         return (
           <TooltipProvider key={key} delayDuration={0}>
             <Tooltip>
-              <TooltipTrigger>
-                <Link href={`/${key}`}>
-                  <div
-                    className={
-                      isSelected
-                        ? "rounded-md bg-primary-500 p-3"
-                        : "group rounded-md p-3 duration-300  hover:bg-primary-500"
-                    }
-                  >
-                    <Icon
-                      key={key}
-                      className={`duration-300 group-hover:fill-white-100 ${isSelected ? "fill-white-100" : "fill-white-400 dark:fill-white-300"}`}
-                    />
-                  </div>
-                </Link>
-              </TooltipTrigger>
+              {isClient && (
+                <TooltipTrigger>
+                  <Link href={`/${key}`}>
+                    <div
+                      className={
+                        isSelected
+                          ? "rounded-md bg-primary-500 p-3"
+                          : "group rounded-md p-3 duration-300  hover:bg-primary-500"
+                      }
+                    >
+                      <Icon
+                        key={key}
+                        className={`duration-300 group-hover:fill-white-100 ${isSelected ? "fill-white-100" : "fill-white-400 dark:fill-white-300"}`}
+                      />
+                    </div>
+                  </Link>
+                </TooltipTrigger>
+              )}
               <TooltipContent
                 className="caption-10 border border-white-border text-dark-700 dark:border-dark-800 dark:bg-dark-700 dark:text-white-100"
                 align="center"

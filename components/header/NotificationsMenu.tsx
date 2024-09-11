@@ -37,6 +37,11 @@ const NotificationsMenu = ({ userId }: { userId: string }) => {
   const [isPending, startTransition] = useTransition();
   const [isLoadingNotifications, startLoadingNotifications] = useTransition();
   const [isMarkedAllRead, setIsMarkedAllRead] = useState(0);
+  const [isClient, setIsClient] = useState(false); // To prevent hydration error
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     const recentNotifications = async () => {
@@ -150,18 +155,20 @@ const NotificationsMenu = ({ userId }: { userId: string }) => {
     <TooltipProvider delayDuration={0}>
       <Tooltip>
         <DropdownMenu>
-          <TooltipTrigger>
-            <DropdownMenuTrigger className="group flex items-center rounded-md bg-white-200 p-3 duration-300 hover:bg-primary-500 dark:bg-dark-700">
-              <Bell
-                className="fill-white-400 duration-300 group-hover:fill-white-100 dark:fill-white-300"
-                status={
-                  (notifications?.unreadNotifications ?? []).length > 0
-                    ? "newWithBorder"
-                    : "none"
-                }
-              />
-            </DropdownMenuTrigger>
-          </TooltipTrigger>
+          {isClient && (
+            <TooltipTrigger>
+              <DropdownMenuTrigger className="group flex items-center rounded-md bg-white-200 p-3 duration-300 hover:bg-primary-500 dark:bg-dark-700">
+                <Bell
+                  className="fill-white-400 duration-300 group-hover:fill-white-100 dark:fill-white-300"
+                  status={
+                    (notifications?.unreadNotifications ?? []).length > 0
+                      ? "newWithBorder"
+                      : "none"
+                  }
+                />
+              </DropdownMenuTrigger>
+            </TooltipTrigger>
+          )}
           <TooltipContent
             className="caption-10 border border-white-border text-dark-700 dark:border-dark-800 dark:bg-dark-700 dark:text-white-100"
             align="center"
