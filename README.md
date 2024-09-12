@@ -1,7 +1,7 @@
-# <a name="introduction">DevToday v2.0</a>
+# <a name="introduction">DevToday v.2.0</a>
 DevToday is a comprehensive platform for developers, providing a curated feed of tech news, podcasts, and events. Developed as part of the JSM Masterclass, this personal project serves as a comprehensive developer community hub with interactive features such as podcast playback and maps for meetup maps.
 
-**v2.0 Deployed Site (In Development)**\
+**v.2.0 Deployed Site (In Development)**\
 &nbsp;&nbsp;&nbsp;&nbsp;[Live Demo](https://dev-today-v2.vercel.app/)\
 &nbsp;&nbsp;&nbsp;&nbsp;**Contact me for demo credentials to explore an existing account.*
   
@@ -135,7 +135,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 - [ ] Build an admin panel
   
 &nbsp;
-## <a name="version-one">☎️ DevToday v1.0</a>
+## <a name="version-one">☎️ DevToday v.1.0</a>
 **Teammate's GitHub**\
 &nbsp;&nbsp;&nbsp;&nbsp;[Adam Gordon](https://github.com/adamgordonny)
 
