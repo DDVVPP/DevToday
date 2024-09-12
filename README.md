@@ -18,7 +18,8 @@ DevToday is a comprehensive platform for developers, providing a curated feed of
 - **TinyMCE** - WYSIWYG HTML editor.
 - **Upload Dropzone** - Library for file uploads.
 - **Google Maps API** - Maps and location services.
-
+  
+&nbsp;
 ## <a name="features">☀️ Key Features</a>
 - **Authentication** – Clerk auth for secure sign-up, sign-in, and logout functionalities.
 - **Onboarding** – Provides an introduction and walkthrough for new users.
@@ -34,7 +35,8 @@ DevToday is a comprehensive platform for developers, providing a curated feed of
 - **Mobile Responsiveness** – Ensures usability on mobile devices.
 - **Light and Dark Modes** – Supports both themes.
 - **Version Control and Project Management** – Integrated with Git, GitHub, and Asana for efficient team collaboration.
-  
+    
+&nbsp;
 ## <a name="quick-start">🚀 Quick Start</a>
 
 Follow these steps to set up the project locally on your machine.
@@ -83,8 +85,55 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+  
+&nbsp;
+## <a name="todo">✅ To Do List</a>
+**Header/Footer Nav**
+- [ ] Close menu when a selection is made from “Create Content“ dropdown
+- [ ] Crop notification profile images to a circle
 
+**Home Pages (Post, Meetup, Podcast, Group)**
+- [ ] Fix sticky footer jumps and scrollbar between route changes on small screens
+- [ ] Ensure “Posts“ content width adjusts to screen size
 
+**Group Details Page**
+- [ ] Add “Delete group“ functionality
+- [ ] Add “View all“ members and admins link and page
+- [ ] Add user removal or admin assignment functionality
+
+**Post Details Page**
+- [ ] Match hover effect on “More from ...“ cards with other detail pages
+
+**Profile Page**
+- [ ] Add “no content“ placeholder for tabs (Posts, Meetups, Podcasts, Groups), “Performance“, and “Recent Posts“ sections
+- [ ] Add missing hover states on buttons (Edit Profile, Follow) and links in the “Performance“ section, and tabs (Posts, Meetups, Podcasts, Groups)
+- [ ] Ensure “Posts“ tab width adjusts to screen size
+
+**Create Pages**
+- [ ] Add missing hover effects on buttons (Cancel, Publish Meetup)
+- [ ] Resolve Upload Dropzone's re-opening of the finder window on esc, when clicking on “Drag & Drop or upload png or jpeg up to 16MB“ area
+- [ ] Add skeleton loading states for route changes
+- [ ] Add infinite scroll to “Select Group“ dropdown and fix group hover styles
+- [ ] Create Group: Add missing hover effects on buttons (Set a Profile Photo, Upload a cover image)
+- [ ] Create Podcast: Fix light mode input style on “Podcast Audio File“ input
+
+**Edit Profile Page**
+- [ ] “Cancel“ button should not trigger a profile update and a loading state on the “Update Profile“ button
+- [ ] Add missing hover effect on “Edit Profile“ button
+- [ ] Fix “Interested Tech“ input to wrap tags and space content correctly
+
+**Miscellaneous Updates**
+- [ ] Connect notifications to user actions
+- [ ] Resolve lag between a user click and the loading.tsx file
+- [ ] Make tags clickable and link to content
+- [ ] Move light/dark mode toggle out of Clerk menu
+- [ ] Link comment authors to their profiles
+- [ ] Refactor code to remove duplication
+- [ ] Add “Share post“ functionality
+- [ ] Add live values for number of views
+- [ ] Build an admin panel
+  
+&nbsp;
 ## <a name="version-one">☎️ DevToday v1.0</a>
 **Teammate's GitHub**\
 &nbsp;&nbsp;&nbsp;&nbsp;[Adam Gordon](https://github.com/adamgordonny)
@@ -132,6 +181,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
     
 - **Mobile Responsiveness** 
   - Ensuring usability and styling consistency across mobile devices for each feature
-
+  
+&nbsp;
 ## <a name="license">📋 License</a>
 Licensed under the MIT License. See [LICENSE](./LICENSE) for more details.
