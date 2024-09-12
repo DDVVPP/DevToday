@@ -4,7 +4,8 @@ DevToday is a comprehensive platform for developers, providing a curated feed of
 **v2.0 Deployed Site (In Development)**\
 &nbsp;&nbsp;&nbsp;&nbsp;[Live Demo](https://dev-today-v2.vercel.app/)\
 &nbsp;&nbsp;&nbsp;&nbsp;**Contact me for demo credentials to explore an existing account.*
-
+  
+&nbsp;
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 - **Next.js** - Framework for building server-side-rendered React applications.
 - **Clerk** - Handles user authentication with secure sign-up, sign-in, and logout functionalities.
