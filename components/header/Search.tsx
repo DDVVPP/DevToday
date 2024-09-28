@@ -71,10 +71,10 @@ const Search = () => {
           {isClient && (
             <TooltipTrigger>
               <div
-                className="group cursor-pointer rounded-md bg-white-200 p-3 duration-300 hover:bg-primary-500 dark:bg-dark-700"
+                className="group cursor-pointer rounded-md bg-white-200 p-3 hover:bg-primary-500 hover:duration-300 dark:bg-dark-700"
                 onClick={() => setOpen((open) => !open)}
               >
-                <SearchIcon className="fill-white-400 duration-300 group-hover:fill-white-100 dark:fill-white-300" />
+                <SearchIcon className="fill-white-400 group-hover:fill-white-100 group-hover:duration-300 dark:fill-white-300" />
               </div>
             </TooltipTrigger>
           )}

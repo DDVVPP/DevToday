@@ -35,12 +35,12 @@ const HeaderNav = () => {
                       className={
                         isSelected
                           ? "rounded-md bg-primary-500 p-3"
-                          : "group rounded-md p-3 duration-300  hover:bg-primary-500"
+                          : "group rounded-md p-3 hover:bg-primary-500  hover:duration-300"
                       }
                     >
                       <Icon
                         key={key}
-                        className={`duration-300 group-hover:fill-white-100 ${isSelected ? "fill-white-100" : "fill-white-400 dark:fill-white-300"}`}
+                        className={`group-hover:fill-white-100 group-hover:duration-300 ${isSelected ? "fill-white-100" : "fill-white-400 dark:fill-white-300"}`}
                       />
                     </div>
                   </Link>

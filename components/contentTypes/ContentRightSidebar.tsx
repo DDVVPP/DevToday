@@ -88,7 +88,7 @@ const ContentRightSidebar = ({
         <div className="flex flex-col gap-y-3 py-5">
           {!isAuthor && (
             <button
-              className="paragraph-3-bold flex w-full justify-center rounded bg-white-200 p-2.5 duration-300 hover:bg-primary-500 hover:text-white-100 disabled:border disabled:border-white-border disabled:bg-white-100 disabled:text-primary-500 dark:bg-dark-700 dark:text-white-200 dark:disabled:border-dark-border disabled:dark:bg-dark-800"
+              className="paragraph-3-bold flex w-full justify-center rounded bg-white-200 p-2.5 hover:bg-primary-500 hover:text-white-100 hover:duration-300 disabled:border disabled:border-white-border disabled:bg-white-100 disabled:text-primary-500 dark:bg-dark-700 dark:text-white-200 dark:disabled:border-dark-border disabled:dark:bg-dark-800"
               disabled={isFollowing || pending}
               onClick={() => !isFollowing && handleFollow()}
             >
@@ -104,7 +104,7 @@ const ContentRightSidebar = ({
             <Link
               href={`/profile/${id}`}
               onClick={() => setIsLoadingProfile(true)}
-              className="paragraph-3-bold flex w-full justify-center rounded bg-white-200 p-2.5 duration-300 hover:bg-primary-500 hover:text-white-100 dark:bg-dark-700 dark:text-white-200"
+              className="paragraph-3-bold flex w-full justify-center rounded bg-white-200 p-2.5 hover:bg-primary-500 hover:text-white-100 hover:duration-300 dark:bg-dark-700 dark:text-white-200"
             >
               <p>Visit Profile</p>
             </Link>
@@ -135,7 +135,7 @@ const ContentRightSidebar = ({
                   <Link
                     href={`/${contentCategory.toLowerCase()}s/${item.id}`}
                     key={item.id}
-                    className="group flex gap-x-3 rounded-lg p-2 duration-300 hover:bg-white-200 dark:hover:bg-dark-700"
+                    className="group flex gap-x-3 rounded-lg p-2 hover:bg-white-200 hover:duration-300 dark:hover:bg-dark-700"
                   >
                     {item.image ? (
                       <div className="relative size-16 shrink-0">

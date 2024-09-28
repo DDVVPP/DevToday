@@ -26,9 +26,9 @@ const LikeButton = ({
 
   const heartBackground = {
     circle:
-      "rounded-full bg-white-300 p-2.5 dark:bg-dark-700 dark:group-hover:bg-dark-800 dark:group-hover/contentcard:bg-dark-800 group-hover/contentcard:bg-white-100 duration-500",
-    square: `rounded duration-300 dark:bg-dark-700 hover:bg-white-200 dark:hover:bg-dark-700 w-6 h-6 ${isLiked && "dark:bg-primary-100 bg-primary-100"}`,
-    none: "rounded duration-300 group-hover/contentcard:bg-white-200 dark:group-hover/contentcard:bg-dark-700",
+      "rounded-full bg-white-300 p-2.5 dark:bg-dark-700 dark:group-hover:bg-dark-800 dark:group-hover/contentcard:bg-dark-800 group-hover/contentcard:bg-white-100 group-hover:duration-500",
+    square: `rounded hover:duration-300 dark:bg-dark-700 hover:bg-white-200 dark:hover:bg-dark-700 w-6 h-6 ${isLiked && "dark:bg-primary-100 bg-primary-100"}`,
+    none: "rounded group-hover:duration-300 group-hover/contentcard:bg-white-200 dark:group-hover/contentcard:bg-dark-700",
   };
 
   // if i add a like status prop, can I use that to update the like status?
@@ -92,7 +92,7 @@ const LikeButton = ({
       >
         <Heart
           size={size}
-          className={`${isPending ? "animate-pulse" : ""} duration-300 group-hover:fill-primary-500 ${
+          className={`${isPending ? "animate-pulse" : ""} group-hover:fill-primary-500 group-hover:duration-300 ${
             isLiked
               ? "fill-primary-500"
               : heartBgType === "none"
