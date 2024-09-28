@@ -14,7 +14,7 @@ const GroupTag = async ({
 }) => {
   return (
     <MotionDiv
-      className="rounded p-1 duration-300 hover:bg-white-200 dark:hover:bg-dark-700"
+      className="rounded p-1 hover:bg-white-200 hover:duration-300 dark:hover:bg-dark-700"
       whileHover={{
         scale: 1.03,
       }}

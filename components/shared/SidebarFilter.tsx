@@ -46,7 +46,7 @@ const SidebarFilter = ({ className }: { className?: string }) => {
                     }
                     icon={getIcon(button.key)}
                     onSelect={() => handleSelectButton(button.key)}
-                    className={`group flex w-full justify-between gap-x-1 bg-white-100 p-1 text-dark-900 duration-300 hover:bg-white-200  hover:text-dark-900 dark:bg-dark-800 dark:hover:bg-dark-700 dark:hover:text-white-200 ${
+                    className={`group flex w-full justify-between gap-x-1 bg-white-100 p-1 text-dark-900 hover:bg-white-200 hover:text-dark-900  hover:duration-300 dark:bg-dark-800 dark:hover:bg-dark-700 dark:hover:text-white-200 ${
                       active === button.key &&
                       "bg-white-200 text-white-100 dark:bg-dark-700 dark:text-white-100"
                     }`}
@@ -70,7 +70,7 @@ const SidebarFilter = ({ className }: { className?: string }) => {
                     }
                     icon={getIcon(button.key)}
                     onSelect={() => handleSelectButton(button.key)}
-                    className={`group flex w-full justify-between gap-x-1 bg-white-100 p-1 text-dark-900 duration-300 hover:bg-white-200  hover:text-dark-900 dark:bg-dark-800 dark:hover:bg-dark-700 dark:hover:text-white-200 ${
+                    className={`group flex w-full justify-between gap-x-1 bg-white-100 p-1 text-dark-900 hover:bg-white-200 hover:text-dark-900  hover:duration-300 dark:bg-dark-800 dark:hover:bg-dark-700 dark:hover:text-white-200 ${
                       active === button.key &&
                       "bg-white-200 text-white-100 dark:bg-dark-700 dark:text-white-100"
                     }`}

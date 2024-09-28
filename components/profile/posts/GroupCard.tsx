@@ -39,7 +39,7 @@ const GroupCard = ({ group, userCount, profile }: GroupCardProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="group flex h-[360px] break-inside-avoid-column flex-wrap rounded-[16px] bg-white-100 p-5 duration-300 hover:bg-[#e1e2e6] dark:bg-dark-800 dark:hover:bg-dark-700"
+      className="group flex h-[360px] break-inside-avoid-column flex-wrap rounded-[16px] bg-white-100 p-5 hover:bg-[#e1e2e6] hover:duration-300 dark:bg-dark-800 dark:hover:bg-dark-700"
     >
       <Link href={`/groups/${group.id}`}>
         <div className="flex w-full flex-col gap-y-3">
@@ -88,7 +88,7 @@ const GroupCard = ({ group, userCount, profile }: GroupCardProps) => {
             ))}
             {count > 0 && (
               <MotionDiv
-                className="paragraph-4-regular flex size-[30px] items-center justify-center rounded-full bg-primary-100 duration-300 group-hover:bg-white-100 dark:bg-dark-700 dark:text-white-100 dark:group-hover:bg-dark-800"
+                className="paragraph-4-regular flex size-[30px] items-center justify-center rounded-full bg-primary-100 hover:duration-300 group-hover:bg-white-100 dark:bg-dark-700 dark:text-white-100 dark:group-hover:bg-dark-800"
                 variants={{
                   open: { opacity: 1, x: 5 },
                   collapsed: { opacity: 0, x: -20 },
@@ -98,7 +98,7 @@ const GroupCard = ({ group, userCount, profile }: GroupCardProps) => {
               </MotionDiv>
             )}
           </MotionDiv>
-          <div className="flex size-[30px] items-center justify-center rounded-full bg-white-200 duration-300 group-hover:bg-white-100 dark:bg-dark-700 dark:group-hover:bg-dark-800">
+          <div className="flex size-[30px] items-center justify-center rounded-full bg-white-200 group-hover:bg-white-100 group-hover:duration-300 dark:bg-dark-700 dark:group-hover:bg-dark-800">
             <CurvedArrows className="ml-[3px] fill-white-400 dark:fill-white-300" />
           </div>
         </div>

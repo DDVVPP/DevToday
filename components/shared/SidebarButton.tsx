@@ -48,7 +48,7 @@ const SidebarButton = ({
       onClick={onSelect}
       className={`${className} h-10 items-center gap-x-2 rounded-md px-2 lg:w-[167px]`}
     >
-      <div className="flex size-7 items-center rounded-md bg-white-200 p-1 duration-300 group-hover:bg-white-100 dark:bg-dark-700 dark:group-hover:bg-dark-800">
+      <div className="flex size-7 items-center rounded-md bg-white-200 p-1 group-hover:bg-white-100 group-hover:duration-300 dark:bg-dark-700 dark:group-hover:bg-dark-800">
         {icon}
       </div>
       <div className="flex w-full items-center justify-between">

@@ -33,8 +33,8 @@ const MenuItems = () => {
             onClick={() => handleMenuClick(label)}
             className="group flex items-center gap-x-4 pl-6 pt-2"
           >
-            <Icon className="fill-dark-800 duration-200 group-hover:fill-primary-500 dark:fill-white-200" />
-            <p className="paragraph-3-medium text-dark-800 duration-200 group-hover:text-primary-500 dark:text-white-200">
+            <Icon className="fill-dark-800 group-hover:fill-primary-500 group-hover:duration-200 dark:fill-white-200" />
+            <p className="paragraph-3-medium text-dark-800 group-hover:text-primary-500 group-hover:duration-200 dark:text-white-200">
               {label}
             </p>
           </button>

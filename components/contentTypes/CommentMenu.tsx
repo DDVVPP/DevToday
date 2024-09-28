@@ -97,7 +97,7 @@ const CommentMenu = ({
           heartBgType="none"
         />
         <DropdownMenu>
-          <DropdownMenuTrigger className="rounded transition duration-300 hover:bg-white-200 dark:hover:bg-dark-700">
+          <DropdownMenuTrigger className="rounded hover:bg-white-200 hover:duration-300 dark:hover:bg-dark-700">
             <TripleDot size={16} className="fill-white-300" />
           </DropdownMenuTrigger>
 
