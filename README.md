@@ -4,22 +4,7 @@ DevToday is a comprehensive platform for developers, providing a curated feed of
 **v.2.0 Deployed Site (In Development)**\
 &nbsp;&nbsp;&nbsp;&nbsp;[Live Demo](https://dev-today-v2.vercel.app/)\
 &nbsp;&nbsp;&nbsp;&nbsp;**Contact me for demo credentials to explore an existing account.*
-  
-&nbsp;
-## <a name="tech-stack">⚙️ Tech Stack</a>
-- **Next.js** - Framework for building server-side-rendered React applications.
-- **Clerk** - Handles user authentication with secure sign-up, sign-in, and logout functionalities.
-- **PostgreSQL** - Relational database management system.
-- **Prisma.io** - ORM for interacting with the database.
-- **Supabase** - Backend-as-a-Service for database management.
-- **Tailwind CSS** - Utility-first CSS framework for styling.
-- **Shadcn** - Component library for Tailwind CSS.
-- **Framer Motion** - Animation library for React.
-- **React DatePicker** - Flexible date and time picker component for React applications.
-- **TinyMCE** - WYSIWYG HTML editor.
-- **Upload Dropzone** - Library for file uploads.
-- **Google Maps API** - Maps and location services.
-  
+
 &nbsp;
 ## <a name="features">☀️ Key Features</a>
 - **Authentication** – Clerk auth for secure sign-up, sign-in, and logout functionalities.
@@ -36,6 +21,21 @@ DevToday is a comprehensive platform for developers, providing a curated feed of
 - **Mobile Responsiveness** – Ensures usability on mobile devices.
 - **Light and Dark Modes** – Supports both themes.
 - **Version Control and Project Management** – Integrated with Git, GitHub, and Asana for efficient team collaboration.
+  
+&nbsp;
+## <a name="tech-stack">⚙️ Tech Stack</a>
+- **Next.js** - Framework for building server-side-rendered React applications.
+- **Clerk** - Handles user authentication with secure sign-up, sign-in, and logout functionalities.
+- **PostgreSQL** - Relational database management system.
+- **Prisma.io** - ORM for interacting with the database.
+- **Supabase** - Backend-as-a-Service for database management.
+- **Tailwind CSS** - Utility-first CSS framework for styling.
+- **Shadcn** - Component library for Tailwind CSS.
+- **Framer Motion** - Animation library for React.
+- **React DatePicker** - Flexible date and time picker component for React applications.
+- **TinyMCE** - WYSIWYG HTML editor.
+- **Upload Dropzone** - Library for file uploads.
+- **Google Maps API** - Maps and location services.
     
 &nbsp;
 ## <a name="quick-start">🚀 Quick Start</a>
