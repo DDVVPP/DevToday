@@ -90,49 +90,57 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 &nbsp;
 ## <a name="todo">✅ To Do List</a>
 **Header/Footer Nav**
-- [ ] Close menu when a selection is made from “Create Content“ dropdown
-- [ ] Crop notification profile images to a circle
+
+🔳 Close menu when a selection is made from “Create Content“ dropdown\
+🔳 Crop notification profile images to a circle
 
 **Home Pages (Post, Meetup, Podcast, Group)**
-- [ ] Fix sticky footer jumps and scrollbar between route changes on small screens
-- [ ] Ensure “Posts“ content width adjusts to screen size
+
+🔳 Fix sticky footer jumps and scrollbar between route changes on small screens\
+🔳 Ensure “Posts“ content width adjusts to screen size
 
 **Group Details Page**
-- [ ] Add “Delete group“ functionality
-- [ ] Add “View all“ members and admins link and page
-- [ ] Add user removal or admin assignment functionality
+
+🔳 Add “Delete group“ functionality\
+🔳 Add “View all“ members and admins link and page\
+🔳 Add user removal or admin assignment functionality
 
 **Post Details Page**
-- [ ] Match hover effect on “More from ...“ cards with other detail pages
+
+🔳 Match hover effect on “More from ...“ cards with other detail pages
 
 **Profile Page**
-- [ ] Add “no content“ placeholder for tabs (Posts, Meetups, Podcasts, Groups), “Performance“, and “Recent Posts“ sections
-- [ ] Add missing hover states on buttons (Edit Profile, Follow) and links in the “Performance“ section, and tabs (Posts, Meetups, Podcasts, Groups)
-- [ ] Ensure “Posts“ tab width adjusts to screen size
+
+🔳 Add “no content“ placeholder for tabs (Posts, Meetups, Podcasts, Groups), “Performance“, and “Recent Posts“ sections\
+🔳 Add missing hover states on buttons (Edit Profile, Follow) and links in the “Performance“ section, and tabs (Posts, Meetups, Podcasts, Groups)\
+🔳 Ensure “Posts“ tab width adjusts to screen size
 
 **Create Pages**
-- [ ] Add missing hover effects on buttons (Cancel, Publish Meetup)
-- [ ] Resolve Upload Dropzone's re-opening of the finder window on esc, when clicking on “Drag & Drop or upload png or jpeg up to 16MB“ area
-- [ ] Add skeleton loading states for route changes
-- [ ] Add infinite scroll to “Select Group“ dropdown and fix group hover styles
-- [ ] Create Group: Add missing hover effects on buttons (Set a Profile Photo, Upload a cover image)
-- [ ] Create Podcast: Fix light mode input style on “Podcast Audio File“ input
+
+🔳 Add missing hover effects on buttons (Cancel, Publish Meetup)\
+🔳 Resolve Upload Dropzone's re-opening of the finder window on esc, when clicking on “Drag & Drop or upload png or jpeg up to 16MB“ area\
+🔳 Add skeleton loading states for route changes\
+🔳 Add infinite scroll to “Select Group“ dropdown and fix group hover styles\
+🔳 Create Group: Add missing hover effects on buttons (Set a Profile Photo, Upload a cover image)\
+🔳 Create Podcast: Fix light mode input style on “Podcast Audio File“ input
 
 **Edit Profile Page**
-- [ ] “Cancel“ button should not trigger a profile update and a loading state on the “Update Profile“ button
-- [ ] Add missing hover effect on “Edit Profile“ button
-- [ ] Fix “Interested Tech“ input to wrap tags and space content correctly
+
+🔳 “Cancel“ button should not trigger a profile update and a loading state on the “Update Profile“ button\
+🔳 Add missing hover effect on “Edit Profile“ button\
+🔳 Fix “Interested Tech“ input to wrap tags and space content correctly
 
 **Miscellaneous Updates**
-- [ ] Connect notifications to user actions
-- [ ] Resolve lag between a user click and the loading.tsx file
-- [ ] Make tags clickable and link to content
-- [ ] Move light/dark mode toggle out of Clerk menu
-- [ ] Link comment authors to their profiles
-- [ ] Refactor code to remove duplication
-- [ ] Add “Share post“ functionality
-- [ ] Add live values for number of views
-- [ ] Build an admin panel
+
+🔳 Connect notifications to user actions\
+🔳 Resolve lag between a user click and the loading.tsx file\
+🔳 Make tags clickable and link to content\
+🔳 Move light/dark mode toggle out of Clerk menu\
+🔳 Link comment authors to their profiles\
+🔳 Refactor code to remove duplication\
+🔳 Add “Share post“ functionality\
+🔳 Add live values for number of views\
+🔳 Build an admin panel
   
 &nbsp;
 ## <a name="version-one">☎️ DevToday v.1.0</a>
