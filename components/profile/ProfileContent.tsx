@@ -10,7 +10,7 @@ import PostCard from "@/components/profile/posts/PostCard";
 import PodcastCard from "@/components/profile/posts/PodcastCard";
 import GroupCard from "@/components/profile/posts/GroupCard";
 import { UserWithProfileContent } from "@/lib/actions/shared.types";
-import ContentNotFound from "@/components/shared/ContentNotFound";
+import NoContentDiv from "@/components/shared/NoContentDiv";
 
 const ProfileContent = ({
   className,
@@ -28,7 +28,7 @@ const ProfileContent = ({
         onValueChange={(value) => setTabValue(value)}
         className={`${className}`}
       >
-        <div className=" flex w-full  items-center justify-between gap-y-2.5 bg-white-100 text-white-400 lg:rounded-[12px] lg:px-[30px] lg:py-5 dark:bg-dark-800 dark:text-white-100">
+        <div className="flex w-full items-center justify-between gap-y-2.5 bg-white-100 text-white-400 lg:rounded-[12px] lg:px-[30px] lg:py-5 dark:bg-dark-800 dark:text-white-100">
           <TabsList className="gap-x-auto flex w-full dark:bg-dark-800">
             {actionButtonItems.map((item) => (
               <TabsTrigger
@@ -43,7 +43,7 @@ const ProfileContent = ({
         </div>
         <TabsContent
           value="posts"
-          className="mt-5 flex w-full justify-center space-y-2.5 bg-white-200 dark:bg-dark-900"
+          className="mt-5 w-full space-y-2.5 bg-white-200 dark:bg-dark-900"
         >
           {content && content.posts ? (
             content.posts?.map((post: any, index: number) => (
@@ -58,48 +58,48 @@ const ProfileContent = ({
               />
             ))
           ) : (
-            <ContentNotFound contentCategory="Post" isPlural />
+            <NoContentDiv contentType="Posts" />
           )}
         </TabsContent>
         <TabsContent
           value="meetups"
-          className={`${!content || !content.meetups || content.meetups.length < 1 ? "flex justify-center" : "mt-5"} space-y-2.5 bg-white-200 dark:bg-dark-900`}
+          className="mt-5 space-y-2.5 bg-white-200 dark:bg-dark-900"
         >
           {content && content.meetups.length > 0 ? (
             content.meetups?.map((meetup: any, index: number) => (
               <MeetupCard key={index} meetup={meetup} />
             ))
           ) : (
-            <ContentNotFound contentCategory="Meetup" isPlural />
+            <NoContentDiv contentType="Meetups" />
           )}
         </TabsContent>
         <TabsContent
           value="podcasts"
-          className={`${!content || !content.podcasts || content.podcasts.length < 1 ? "flex justify-center" : "mt-5"} w-full space-y-2.5 bg-white-200 dark:bg-dark-900`}
+          className="mt-5 space-y-2.5 bg-white-200 dark:bg-dark-900"
         >
           {content && content.podcasts.length > 0 ? (
             content.podcasts?.map((podcast: any, index: number) => (
               <div
                 key={index}
-                className=" columns-2  gap-x-5 space-y-5 max-md:columns-1"
+                className="columns-2 gap-x-5 space-y-5 max-md:columns-1"
               >
                 <PodcastCard user={content} podcast={podcast} />
               </div>
             ))
           ) : (
-            <ContentNotFound contentCategory="Podcast" isPlural />
+            <NoContentDiv contentType="Podcasts" />
           )}
         </TabsContent>
 
         <TabsContent
           value="groups"
-          className={`${!content || !content.groups || content.groups.length < 1 ? "mt-0 flex justify-center" : "mt-5"}  w-full space-y-2.5 bg-white-200 dark:bg-dark-900`}
+          className="mt-5 space-y-2.5 bg-white-200 dark:bg-dark-900"
         >
           {content && content.groups.length > 0 ? (
             content.groups?.slice(0, 4).map((group: any, index: any) => (
               <div
                 key={index}
-                className="columns-2 gap-x-5 space-y-5 max-md:columns-1 "
+                className="columns-2 gap-x-5 space-y-5 max-md:columns-1"
               >
                 <div className="rounded-[16px] bg-white-200 dark:bg-dark-800">
                   <GroupCard
@@ -111,7 +111,7 @@ const ProfileContent = ({
               </div>
             ))
           ) : (
-            <ContentNotFound contentCategory="Group" isPlural />
+            <NoContentDiv contentType="Groups" />
           )}
         </TabsContent>
       </Tabs>
