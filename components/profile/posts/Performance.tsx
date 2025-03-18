@@ -23,11 +23,8 @@ const Performance = async ({ userId }: { userId?: number }) => {
       </div>
 
       {contents && contents.length > 0 ? (
-        contents.map((content, index) => (
-          <div
-            key={index}
-            className="flex flex-col content-center items-center justify-center space-y-5 bg-transparent"
-          >
+        <div className="flex flex-col content-center items-center justify-center space-y-5 bg-transparent">
+          {contents.map((content, index) => (
             <PerformanceItem
               type={content.type === "post" ? "posts" : content.type}
               key={index}
@@ -37,8 +34,8 @@ const Performance = async ({ userId }: { userId?: number }) => {
               id={content.id}
               image={content.image}
             />
-          </div>
-        ))
+          ))}
+        </div>
       ) : (
         <p className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
           No recent posts found!
