@@ -143,7 +143,7 @@ async function main() {
         username: faker.internet.displayName(),
         level,
         bio: `${firstName} loves ${faker.company.buzzVerb()} and exploring new tech. Always keen on learning about ${faker.helpers.arrayElement(techArray)}, ${firstName} enjoys diving into various projects and expanding their skills.`,
-        image: faker.image.urlLoremFlickr({ category: "avatar" }),
+        image: faker.image.urlPicsumPhotos(),
         goal: faker.helpers.enumValue(Goals),
         tech: faker.helpers.arrayElements(techArray),
         SocialMedia: {
@@ -168,7 +168,7 @@ async function main() {
       username: "demouser",
       level: Levels.LearningEnthusiast,
       bio: `Passionate developer with a keen interest in emerging technologies and open-source projects. I love exploring innovative solutions and sharing insights with the tech community. Always eager to collaborate on new ideas and help others grow in their coding journey. Let's build something amazing together!`,
-      image: faker.image.urlLoremFlickr({ category: "avatar" }),
+      image: faker.image.urlPicsumPhotos(),
       goal: faker.helpers.enumValue(Goals),
       tech: faker.helpers.arrayElements(techArray),
       SocialMedia: {
@@ -197,8 +197,8 @@ async function main() {
         about: `Welcome to the ${faker.commerce.department()} ${faker.helpers.arrayElement(groupNouns)}! In this community, we dive into various topics such as ${faker.helpers.arrayElement(techTerms)}. We’re here to explore ${faker.helpers.arrayElement(techTrends)} and stay updated on the latest tech developments.
 
         Join us to connect with like-minded individuals, share your knowledge, and collaborate on exciting projects. Whether you’re passionate about ${faker.helpers.arrayElement(techTerms)} or eager to learn more, there’s a place for you here.`,
-        coverImage: faker.image.urlLoremFlickr({ category: "education" }),
-        profileImage: faker.image.urlLoremFlickr({ category: "avatar" }),
+        coverImage: faker.image.urlPicsumPhotos(),
+        profileImage: faker.image.urlPicsumPhotos(),
         admins: {
           connect: adminsConnect,
         },
@@ -250,7 +250,7 @@ async function main() {
         Join the conversation on how these innovations are shaping the future of web development. Share your experiences, ask questions, and connect with fellow developers to continue advancing your skills and knowledge in this exciting field.`,
         likes: faker.number.int(400),
         views: faker.number.int(1000),
-        image: faker.image.urlLoremFlickr({ category: "abstract" }),
+        image: faker.image.urlPicsumPhotos(),
         tags,
         group: {
           connect: {
@@ -299,7 +299,7 @@ async function main() {
         longitude,
         likes: faker.number.int(400),
         views: faker.number.int(1000),
-        image: faker.image.urlLoremFlickr({ category: "nature" }),
+        image: faker.image.urlPicsumPhotos(),
         tags,
         group: {
           connect: {
@@ -329,7 +329,7 @@ async function main() {
 `,
         likes: faker.number.int(800),
         views: faker.number.int(800),
-        image: faker.image.urlLoremFlickr({ category: "technics" }),
+        image: faker.image.urlPicsumPhotos(),
         audio,
         tags,
         group: {
