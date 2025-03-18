@@ -10,6 +10,7 @@ import PostCard from "@/components/profile/posts/PostCard";
 import PodcastCard from "@/components/profile/posts/PodcastCard";
 import GroupCard from "@/components/profile/posts/GroupCard";
 import { UserWithProfileContent } from "@/lib/actions/shared.types";
+import ContentNotFound from "@/components/shared/ContentNotFound";
 
 const ProfileContent = ({
   className,
@@ -42,57 +43,76 @@ const ProfileContent = ({
         </div>
         <TabsContent
           value="posts"
-          className="mt-5 w-full space-y-2.5 bg-white-200 dark:bg-dark-900"
+          className="mt-5 flex w-full justify-center space-y-2.5 bg-white-200 dark:bg-dark-900"
         >
-          {content.posts?.map((post: any, index: number) => (
-            <PostCard
-              key={index}
-              userData={content}
-              post={{
-                ...post,
-                commentCount: post.commentCount,
-                tags: post.tags,
-              }}
-            />
-          ))}
+          {content && content.posts ? (
+            content.posts?.map((post: any, index: number) => (
+              <PostCard
+                key={index}
+                userData={content}
+                post={{
+                  ...post,
+                  commentCount: post.commentCount,
+                  tags: post.tags,
+                }}
+              />
+            ))
+          ) : (
+            <ContentNotFound contentCategory="Post" isPlural />
+          )}
         </TabsContent>
         <TabsContent
           value="meetups"
-          className="mt-5 w-full space-y-2.5 bg-white-200 dark:bg-dark-900"
+          className={`${!content || !content.meetups || content.meetups.length < 1 ? "flex justify-center" : "mt-5"} space-y-2.5 bg-white-200 dark:bg-dark-900`}
         >
-          {content.meetups?.map((meetup: any, index: number) => (
-            <MeetupCard key={index} meetup={meetup} />
-          ))}
+          {content && content.meetups.length > 0 ? (
+            content.meetups?.map((meetup: any, index: number) => (
+              <MeetupCard key={index} meetup={meetup} />
+            ))
+          ) : (
+            <ContentNotFound contentCategory="Meetup" isPlural />
+          )}
         </TabsContent>
         <TabsContent
           value="podcasts"
-          className="mt-5 w-full space-y-2.5 bg-white-200 dark:bg-dark-900"
+          className={`${!content || !content.podcasts || content.podcasts.length < 1 ? "flex justify-center" : "mt-5"} w-full space-y-2.5 bg-white-200 dark:bg-dark-900`}
         >
-          <div className=" columns-2  gap-x-5 space-y-5 max-md:columns-1">
-            {content.podcasts?.map((podcast: any, index: number) => (
-              <PodcastCard key={index} user={content} podcast={podcast} />
-            ))}
-          </div>
+          {content && content.podcasts.length > 0 ? (
+            content.podcasts?.map((podcast: any, index: number) => (
+              <div
+                key={index}
+                className=" columns-2  gap-x-5 space-y-5 max-md:columns-1"
+              >
+                <PodcastCard user={content} podcast={podcast} />
+              </div>
+            ))
+          ) : (
+            <ContentNotFound contentCategory="Podcast" isPlural />
+          )}
         </TabsContent>
 
         <TabsContent
           value="groups"
-          className="mt-5 w-full space-y-2.5 bg-white-200 dark:bg-dark-900"
+          className={`${!content || !content.groups || content.groups.length < 1 ? "mt-0 flex justify-center" : "mt-5"}  w-full space-y-2.5 bg-white-200 dark:bg-dark-900`}
         >
-          <div className="columns-2  gap-x-5 space-y-5 max-md:columns-1 ">
-            {content.groups?.slice(0, 4).map((group: any, index: any) => (
+          {content && content.groups.length > 0 ? (
+            content.groups?.slice(0, 4).map((group: any, index: any) => (
               <div
                 key={index}
-                className="rounded-[16px] bg-white-200 dark:bg-dark-800"
+                className="columns-2 gap-x-5 space-y-5 max-md:columns-1 "
               >
-                <GroupCard
-                  group={group}
-                  userCount={group.memberCount}
-                  profile={group?.members}
-                />
+                <div className="rounded-[16px] bg-white-200 dark:bg-dark-800">
+                  <GroupCard
+                    group={group}
+                    userCount={group.memberCount}
+                    profile={group?.members}
+                  />
+                </div>
               </div>
-            ))}
-          </div>
+            ))
+          ) : (
+            <ContentNotFound contentCategory="Group" isPlural />
+          )}
         </TabsContent>
       </Tabs>
     </>
