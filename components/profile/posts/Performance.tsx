@@ -22,19 +22,28 @@ const Performance = async ({ userId }: { userId?: number }) => {
         </span>
       </div>
 
-      <div className="flex flex-col content-center items-center justify-center space-y-5 bg-transparent">
-        {contents.map((content, index) => (
-          <PerformanceItem
-            type={content.type === "post" ? "posts" : content.type}
+      {contents && contents.length > 0 ? (
+        contents.map((content, index) => (
+          <div
             key={index}
-            views={content.views}
-            likes={content.likes}
-            comments={content.comment_count}
-            id={content.id}
-            image={content.image}
-          />
-        ))}
-      </div>
+            className="flex flex-col content-center items-center justify-center space-y-5 bg-transparent"
+          >
+            <PerformanceItem
+              type={content.type === "post" ? "posts" : content.type}
+              key={index}
+              views={content.views}
+              likes={content.likes}
+              comments={content.comment_count}
+              id={content.id}
+              image={content.image}
+            />
+          </div>
+        ))
+      ) : (
+        <p className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+          No recent posts found!
+        </p>
+      )}
     </div>
   );
 };
