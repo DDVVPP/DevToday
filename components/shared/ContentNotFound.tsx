@@ -17,7 +17,7 @@ const ContentNotFound = ({
         {isPlural && "s"} not found
       </h1>
       <Link
-        className="rounded bg-primary-500 px-4 py-2 text-white-200 hover:opacity-70 hover:duration-300"
+        className="rounded bg-primary-500 px-4 py-2 text-center text-white-200 hover:opacity-70 hover:duration-300"
         href={`/${pluralLowerCaseContentType}`}
       >
         Click here to view all {pluralLowerCaseContentType}
