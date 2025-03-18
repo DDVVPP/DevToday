@@ -63,9 +63,9 @@ const ProfileContent = ({
         </TabsContent>
         <TabsContent
           value="meetups"
-          className={`${!content || !content.meetups ? "flex justify-center" : "mt-5"} space-y-2.5 bg-white-200 dark:bg-dark-900`}
+          className={`${!content || !content.meetups || content.meetups.length < 1 ? "flex justify-center" : "mt-5"} space-y-2.5 bg-white-200 dark:bg-dark-900`}
         >
-          {content && content.meetups ? (
+          {content && content.meetups.length > 0 ? (
             content.meetups?.map((meetup: any, index: number) => (
               <MeetupCard key={index} meetup={meetup} />
             ))
@@ -75,9 +75,9 @@ const ProfileContent = ({
         </TabsContent>
         <TabsContent
           value="podcasts"
-          className={`${!content || !content.podcasts ? "flex justify-center" : "mt-5"} w-full space-y-2.5 bg-white-200 dark:bg-dark-900`}
+          className={`${!content || !content.podcasts || content.podcasts.length < 1 ? "flex justify-center" : "mt-5"} w-full space-y-2.5 bg-white-200 dark:bg-dark-900`}
         >
-          {content && content.podcasts ? (
+          {content && content.podcasts.length > 0 ? (
             content.podcasts?.map((podcast: any, index: number) => (
               <div
                 key={index}
@@ -93,9 +93,9 @@ const ProfileContent = ({
 
         <TabsContent
           value="groups"
-          className={`${!content || !content.groups ? "mt-0 flex justify-center" : "mt-5"}  w-full space-y-2.5 bg-white-200 dark:bg-dark-900`}
+          className={`${!content || !content.groups || content.groups.length < 1 ? "mt-0 flex justify-center" : "mt-5"}  w-full space-y-2.5 bg-white-200 dark:bg-dark-900`}
         >
-          {content && content.groups ? (
+          {content && content.groups.length > 0 ? (
             content.groups?.slice(0, 4).map((group: any, index: any) => (
               <div
                 key={index}
