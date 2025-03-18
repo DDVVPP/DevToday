@@ -63,7 +63,7 @@ const ProfileContent = ({
         </TabsContent>
         <TabsContent
           value="meetups"
-          className="mt-5 space-y-2.5 bg-white-200 dark:bg-dark-900"
+          className="mt-5 w-full space-y-2.5 bg-white-200 dark:bg-dark-900"
         >
           {content && content.meetups.length > 0 ? (
             content.meetups?.map((meetup: any, index: number) => (
@@ -75,17 +75,14 @@ const ProfileContent = ({
         </TabsContent>
         <TabsContent
           value="podcasts"
-          className="mt-5 space-y-2.5 bg-white-200 dark:bg-dark-900"
+          className="mt-5 w-full space-y-2.5 bg-white-200 dark:bg-dark-900"
         >
           {content && content.podcasts.length > 0 ? (
-            content.podcasts?.map((podcast: any, index: number) => (
-              <div
-                key={index}
-                className="columns-2 gap-x-5 space-y-5 max-md:columns-1"
-              >
-                <PodcastCard user={content} podcast={podcast} />
-              </div>
-            ))
+            <div className="columns-2 gap-x-5 space-y-5 max-md:columns-1">
+              {content.podcasts?.map((podcast: any, index: number) => (
+                <PodcastCard key={index} user={content} podcast={podcast} />
+              ))}
+            </div>
           ) : (
             <NoContentDiv contentType="Podcasts" />
           )}
@@ -93,23 +90,23 @@ const ProfileContent = ({
 
         <TabsContent
           value="groups"
-          className="mt-5 space-y-2.5 bg-white-200 dark:bg-dark-900"
+          className="mt-5 w-full space-y-2.5 bg-white-200 dark:bg-dark-900"
         >
           {content && content.groups.length > 0 ? (
-            content.groups?.slice(0, 4).map((group: any, index: any) => (
-              <div
-                key={index}
-                className="columns-2 gap-x-5 space-y-5 max-md:columns-1"
-              >
-                <div className="rounded-[16px] bg-white-200 dark:bg-dark-800">
+            <div className="columns-2 gap-x-5 space-y-5 max-md:columns-1">
+              {content.groups?.slice(0, 4).map((group: any, index: any) => (
+                <div
+                  key={index}
+                  className="rounded-[16px] bg-white-200 dark:bg-dark-800"
+                >
                   <GroupCard
                     group={group}
                     userCount={group.memberCount}
                     profile={group?.members}
                   />
                 </div>
-              </div>
-            ))
+              ))}
+            </div>
           ) : (
             <NoContentDiv contentType="Groups" />
           )}
