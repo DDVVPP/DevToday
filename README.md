@@ -5,6 +5,7 @@ DevToday is a comprehensive platform for developers, providing a curated feed of
 &nbsp;&nbsp;&nbsp;&nbsp;[Live Demo](https://dev-today-v2.vercel.app/)\
 &nbsp;&nbsp;&nbsp;&nbsp;**Contact me for demo credentials to explore an existing account.*
 
+Follow my dev journey at [#darshindevtoday](https://www.linkedin.com/search/results/all/?keywords=%23darshindevtoday&origin=HASH_TAG_FROM_FEED)
 &nbsp;
 ## <a name="features">☀️ Key Features</a>
 - **Authentication** – Clerk auth for secure sign-up, sign-in, and logout functionalities.
