@@ -27,8 +27,8 @@ const Profile = ({ user }: ProfileProps) => {
   const { user: currentUser } = useUser();
   const router = useRouter();
 
-  const followerCount = user?.followers?.length;
-  const followingCount = user?.following?.length;
+  const followerCount = user?.followers?.length ?? "0";
+  const followingCount = user?.following?.length ?? "0";
 
   const handleFollow = async () => {
     const idToFollow = user?.id;
@@ -140,7 +140,9 @@ const Profile = ({ user }: ProfileProps) => {
         </div>
         <div className="flex flex-col items-center gap-y-[14px] align-top text-white-400">
           <RenderSocialLink socialMedia={user?.SocialMedia!} />
-          joined {getTimeDifference(user?.createdAt!)}
+          {user?.createdAt
+            ? `joined ${getTimeDifference(user?.createdAt!)}`
+            : "Cannot find joined at date"}
         </div>
       </div>
     </>

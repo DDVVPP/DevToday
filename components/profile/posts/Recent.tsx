@@ -20,7 +20,7 @@ const Recent = async ({ firstName, lastName, userId }: RecentProps) => {
           <RightArrow className="paragraph-2-bold size-[20px] fill-transparent dark:stroke-white-200" />
         </span>
       </div>
-      {posts &&
+      {posts ? (
         posts.map((item, index) => (
           <Link href={`/posts/${item.id}`} key={index}>
             <RecentItem
@@ -31,7 +31,12 @@ const Recent = async ({ firstName, lastName, userId }: RecentProps) => {
               author={firstName + " " + lastName}
             />
           </Link>
-        ))}
+        ))
+      ) : (
+        <p className="paragraph-3-medium flex gap-x-1 text-white-400 dark:text-white-300">
+          No recent posts found!
+        </p>
+      )}
     </div>
   );
 };

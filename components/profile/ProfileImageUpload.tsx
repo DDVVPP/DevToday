@@ -22,7 +22,7 @@ const ProfileImageUpload = ({
   return (
     <>
       <div className=" flex size-[60px] content-center items-center justify-center rounded-full bg-white-100  dark:bg-dark-800 ">
-        {image! ? (
+        {image ? (
           <Image
             src={image!}
             width={60}

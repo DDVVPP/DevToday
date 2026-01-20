@@ -15,6 +15,7 @@ import MeetupCard from "@/components/profile/posts/MeetupCard";
 import PostCard from "@/components/profile/posts/PostCard";
 import PodcastCard from "@/components/profile/posts/PodcastCard";
 import GroupMembersTab from "./GroupMembersTab";
+import NoContentDiv from "../shared/NoContentDiv";
 
 const GroupTabs = ({
   group,
@@ -31,14 +32,6 @@ const GroupTabs = ({
   const groupAdmins = [...group.admins];
   groupAdmins.forEach((admin: MemberIsAdmin) => (admin.isAdmin = true));
   const allMembers = [...group.members, ...groupAdmins];
-
-  const renderNoContentDiv = (contentType: string) => {
-    return (
-      <div className="flex h-24 items-center justify-center rounded-lg bg-white-100 dark:bg-dark-800">
-        <p className="paragraph-3-medium text-white-400">No {contentType}</p>
-      </div>
-    );
-  };
 
   return (
     <Tabs defaultValue={tabValue} onValueChange={(value) => setTabValue(value)}>
@@ -57,29 +50,33 @@ const GroupTabs = ({
       </div>
 
       <TabsContent value="Posts" className="mt-5 flex w-full flex-col gap-y-5">
-        {group.posts?.length > 0
-          ? group.posts?.map((post: any, index: number) => (
-              <PostCard
-                key={index}
-                userData={group}
-                post={{
-                  ...post,
-                  commentCount: post.commentCount,
-                  tags: post.tags,
-                }}
-              />
-            ))
-          : renderNoContentDiv("Posts")}
+        {group.posts?.length > 0 ? (
+          group.posts?.map((post: any, index: number) => (
+            <PostCard
+              key={index}
+              userData={group}
+              post={{
+                ...post,
+                commentCount: post.commentCount,
+                tags: post.tags,
+              }}
+            />
+          ))
+        ) : (
+          <NoContentDiv contentType="Posts" />
+        )}
       </TabsContent>
       <TabsContent
         value="Meetups"
         className="flex w-full flex-col gap-y-[21px]"
       >
-        {group.meetups?.length > 0
-          ? group.meetups?.map((meetup: any, index: number) => (
-              <MeetupCard key={index} meetup={meetup} />
-            ))
-          : renderNoContentDiv("Meetups")}
+        {group.meetups?.length > 0 ? (
+          group.meetups?.map((meetup: any, index: number) => (
+            <MeetupCard key={index} meetup={meetup} />
+          ))
+        ) : (
+          <NoContentDiv contentType="Meetups" />
+        )}
       </TabsContent>
       <TabsContent
         value="Podcasts"
@@ -97,7 +94,7 @@ const GroupTabs = ({
             ))}
           </div>
         ) : (
-          renderNoContentDiv("Podcasts")
+          <NoContentDiv contentType="Podcasts" />
         )}
       </TabsContent>
 
@@ -119,7 +116,7 @@ const GroupTabs = ({
             ))}
           </div>
         ) : (
-          renderNoContentDiv("Members")
+          <NoContentDiv contentType="Groups" />
         )}
       </TabsContent>
     </Tabs>
